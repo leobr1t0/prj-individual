@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de cadastro</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styleCadastro.css">
+    <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dragon Ball</h1>
+            <ul class="navbar">
+                <!-- <li class="agora">Inicial</li> -->
+                <li>
+                    <a href="#palavraCruzada">Palavra Cruzada</a>
+                </li>
+                <li>
+                    <a href="#contact">Fale Conosco</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="banner">
+            <div class="form">
+                <h2>Bem-vindo!</h2>
+
+                <label for="iptNome">Nome:</label>
+                <input type="text" id="iptNome" placeholder="Digite seu nome">
+
+                <label for="iptEmail">E-mail:</label>
+                <input type="text" id="iptEmail" placeholder="teste@provedor.com">
+
+                <label for="iptSenha">Senha:</label>
+                <input type="password" id="iptSenha" placeholder="********">
+
+                <label for="iptConfSenha">Confirmação de senha:</label>
+                <input type="password" id="iptConfSenha" placeholder="*********">
+
+                <button class="btnCadastro" onclick="cadastrar()">Cadastrar</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="social">
+            <ul class="socialLinks">
+                <a href="mailto:leonardo.oliveira@sptech.school">
+                    <li><i class="fa-solid fa-envelope"></i>Email</li>
+                </a>
+                <a href="https://www.linkedin.com/in/leonardo-brito-de-oliveira">
+                    <li><i class="fa-brands fa-linkedin"></i>LinkedIn</li>
+                </a>
+                <a href="https://github.com/leobr1t0">
+                    <li><i class="fa-brands fa-github"></i>Github</li>
+                </a>
+                <a href="">
+                    <li><i class="fa-brands fa-instagram"></i>Instagram</li>
+                </a>
+            </ul>
+            <ul class="contact">
+                <li><i class="fa-solid fa-phone"></i>11 40028922</li>
+                <li><i class="fa-solid fa-location-dot"></i>São Paulo Tech School</li>
+            </ul>
+        </div>
+            <span>Feito por Leonardo Brito - 2022 &copy;</span>
+    </footer>
+</body>
+</html>

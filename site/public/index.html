@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball - Projeto Individual</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styleIndex.css">
+    <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Dragon Ball</h1>
+            <ul class="navbar">
+                <!-- <li class="agora">Inicial</li> -->
+                <li>
+                    <a href="index#palavraCruzada">Palavra Cruzada</a>
+                </li>
+                <li>
+                    <a href="index#contact">Fale Conosco</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="carrossel">
+            <div class="container">
+                <button class="arrow-left control" aria-label="Previous Image"><</button>
+                <button class="arrow-right control" aria-label="Next Image">></button>
+                <div class="gallery-wrapper">
+                    <div class="gallery">
+                        <img src="assets/img/banner1.jpg" alt="" class="item current-item">
+                        <img src="assets/img/banner2.jpg" alt="" class="item">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro">
+            <h2>Introdução</h2>
+            <div class="boxesIntro">
+                <div class="boxIntro">
+                    <img src="assets/img/logoIntro.png" alt="">
+                </div>
+                <div class="boxIntro">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis earum consequuntur unde perspiciatis iure voluptatem, id libero eaque iusto natus, eos cupiditate eum rem! Excepturi facilis veniam officia recusandae!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="valores">
+            <h2>Valores</h2>
+            <div class="boxesValores">
+                <div class="boxValor">
+                    <img src="assets/img/valores.png" alt="">
+                    <h3>Valor 1</h3>
+                    <div class="traco"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="boxValor">
+                    <img src="assets/img/valores.png" alt="">
+                    <h3>Valor 1</h3>
+                    <div class="traco"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="boxValor">
+                    <img src="assets/img/valores.png" alt="">
+                    <h3>Valor 1</h3>
+                    <div class="traco"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="palavraCruzada" id="palavraCruzada">
+            <div class="minigame">
+                <div class="panel">
+                    <h2>Palavra Cruzada</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="cruzadinha.html"><button class="btnGame">Jogar</button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Fale Conosco</h2>
+            <div class="panelContact">
+                <form action="">
+                    <div class="formInputs">
+                        <label for="iptNome">Nome</label>
+                        <input type="text" id="iptNome" placeholder="Digite seu nome">
+                        <label for="iptEmail">Email</label>
+                        <input type="text" id="iptEmail" placeholder="Digite seu email">
+                        <label for="iptTitulo">Título</label>
+                        <input type="text" id="iptTitulo" placeholder="Digite o títuo da mensagem">
+                    </div>
+                    <div class="formInputs2">
+                        <label for="iptAssunto">Assunto</label>
+                        <textarea id="iptAssunto" cols="10" rows="4" placeholder="Digite o assunto da mensagem"></textarea>
+                        <button class="btnForm">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social">
+            <ul class="socialLinks">
+                <a href="mailto:leonardo.oliveira@sptech.school">
+                    <li><i class="fa-solid fa-envelope"></i>Email</li>
+                </a>
+                <a href="https://www.linkedin.com/in/leonardo-brito-de-oliveira">
+                    <li><i class="fa-brands fa-linkedin"></i>LinkedIn</li>
+                </a>
+                <a href="https://github.com/leobr1t0">
+                    <li><i class="fa-brands fa-github"></i>Github</li>
+                </a>
+                <a href="">
+                    <li><i class="fa-brands fa-instagram"></i>Instagram</li>
+                </a>
+            </ul>
+            <ul class="contact">
+                <li><i class="fa-solid fa-phone"></i>11 40028922</li>
+                <li><i class="fa-solid fa-location-dot"></i>São Paulo Tech School</li>
+            </ul>
+        </div>
+            <span>Feito por Leonardo Brito - 2022 &copy;</span>
+    </footer>
+</body>
+
+</html>
+<script src="scripts/banner.js"></script>
