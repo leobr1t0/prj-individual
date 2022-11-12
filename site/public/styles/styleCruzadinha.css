@@ -46,7 +46,7 @@ section .containerQst {
 
 .questionGroup {
     width: 55vw;
-    height: 580px;
+    height: 43vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

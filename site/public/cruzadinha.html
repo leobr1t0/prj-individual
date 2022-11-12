@@ -11,7 +11,7 @@
     <script src="scripts/cruzadinha.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Palavra Cruzada</title>
-</head>         
+</head>
 
 <body onload="criaInputs()">
     <main>
@@ -51,10 +51,13 @@
                             <summary id="sum3">3° Questão</summary>
                             <div class="detQuest">
                                 <p>
-                                    De acordo com o Mestre Kame, quantos anos de treino seriam necessários para aprender a usar o Kamehameha?
+                                    De acordo com o Mestre Kame, quantos anos de treino seriam necessários para aprender
+                                    a usar o Kamehameha?
                                 </p>
-                                <div><input type="text" id="" class="iptQuestion" onkeyup="verificar()"
-                                        placeholder="Insira aqui a resposta"></div>
+                                <div>
+                                    <input type="text" id="" class="iptQuestion" onkeyup="verificar()"
+                                        placeholder="Insira aqui a resposta">
+                                </div>
                             </div>
                         </details>
                         <details class="question" id="det4">
@@ -63,38 +66,49 @@
                                 <p>
                                     Qual foi o primeiro personagem a ter um desejo realizado por Shenlong na série?
                                 </p>
-                                <div><input type="text" id="" class="iptQuestion" onkeyup="verificar()"
-                                        placeholder="Insira aqui a resposta"></div>
+                                <div>
+                                    <input type="text" id="" class="iptQuestion" onkeyup="verificar()"
+                                        placeholder="Insira aqui a resposta">
+                                </div>
                             </div>
                         </details>
                         <details class="question" id="det5">
                             <summary id="sum5">5° Questão</summary>
                             <div class="detQuest">
                                 <p>
-                                    Quem foi treinado por Mestre Kame junto de Goku e se tornou um de seus melhores amigos?
+                                    Quem foi treinado por Mestre Kame junto de Goku e se tornou um de seus melhores
+                                    amigos?
                                 </p>
-                                <div><input type="text" id="" class="iptQuestion" onkeyup="verificar()"
-                                        placeholder="Insira aqui a resposta"></div>
+                                <div>
+                                    <input type="text" id="" class="iptQuestion" onkeyup="verificar()"
+                                        placeholder="Insira aqui a resposta">
+                                </div>
                             </div>
                         </details>
+                    </div>
+                    <div class="questionBox">
                         <details class="question" id="det6">
                             <summary id="sum6">6° Questão</summary>
                             <div class="detQuest">
                                 <p>
                                     Quem foi o vencedor do 21° Torneio de Artes Marciais?
                                 </p>
-                                <div><input type="text" id="" class="iptQuestion" onkeyup="verificar()"
-                                        placeholder="Insira aqui a resposta"></div>
+                                <div>
+                                    <input type="text" id="" class="iptQuestion" onkeyup="verificar()"
+                                        placeholder="Insira aqui a resposta">
+                                </div>
                             </div>
                         </details>
                         <details class="question" id="det7">
                             <summary id="sum7">7° Questão</summary>
                             <div class="detQuest">
                                 <p>
-                                    Qual o nome da organização que Goku derrotou quando criança?
+                                    Qual a abreviação do nome da organização que Goku derrotou quando criança?
                                 </p>
-                                <div><input type="text" id="" class="iptQuestion" onkeyup="verificar()"
-                                        placeholder="Insira aqui a resposta"></div>
+                                <div>
+                                    <input type="text" id="" class="iptQuestion" onkeyup="verificar()"
+                                        placeholder="Insira aqui a resposta">
+                                </div>
                             </div>
                         </details>
                         <details class="question" id="det8">
@@ -103,8 +117,10 @@
                                 <p>
                                     Qual foi o pedido que o Piccolo Daimaoh fez a Shenlong?
                                 </p>
-                                <div><input type="text" id="" class="iptQuestion" onkeyup="verificar()"
-                                        placeholder="Insira aqui a resposta"></div>
+                                <div>
+                                    <input type="text" id="" class="iptQuestion" onkeyup="verificar()"
+                                        placeholder="Insira aqui a resposta">
+                                </div>
                             </div>
                         </details>
                         <details class="question" id="det9">
@@ -113,20 +129,22 @@
                                 <p>
                                     Quais foram os lutadores na final do 23° Torneio de Artes Marciais?
                                 </p>
-                                <div><input type="text" id="" class="iptQuestion" onkeyup="verificar()"
-                                        placeholder="Insira aqui a resposta"></div>
+                                <div>
+                                    <input type="text" id="" class="iptQuestion" onkeyup="verificar()"
+                                        placeholder="Insira aqui a resposta">
+                                </div>
                             </div>
                         </details>
-                    </div>
-                    <div class="questionBox">
                         <details class="question" id="det10">
                             <summary id="sum10">10° Questão</summary>
                             <div class="detQuest">
                                 <p>
                                     Quantos anos se passaram entre o final de Dragon Ball e o início de Dragon Ball Z?
                                 </p>
-                                <div><input type="text" id="" class="iptQuestion" onkeyup="verificar()"
-                                        placeholder="Insira aqui a resposta"></div>
+                                <div>
+                                    <input type="text" id="" class="iptQuestion" onkeyup="verificar()"
+                                        placeholder="Insira aqui a resposta">
+                                </div>
                             </div>
                         </details>
                     </div>
@@ -156,28 +174,22 @@
 </html>
 
 <script>
-      Swal.fire({
-          imageUrl: 'https://media.tenor.com/JcuSfsgy_IoAAAAM/goku-dragon-ball.gif',
-          imageHeight: 200,
-          title: 'Palavra Cruzada',
-          text: 'Projeto Individual',
-          confirmButtonText: 'Jogar',
-          footer: 'Leonardo Brito - 1ADS B',
-          showClass: {
-              popup: 'animate__animated animate__fadeInDown'
-          },
-          hideClass: {
-              popup: 'animate__hinge'
-          },
-          width: 600,
-          padding: '3em',
-          color: '#716add',
-          background: '#fff url(assets/img/plus.png)',
-          backdrop: `
-      rgba(0,0,123,0.4)
-      url("https://media.tenor.com/-AyTtMgs2mMAAAAj/nyan-cat-nyan.gif")
-      left top
-      no-repeat
-      `
-      });
+    Swal.fire({
+        imageUrl: 'https://media.tenor.com/JcuSfsgy_IoAAAAM/goku-dragon-ball.gif',
+        imageHeight: 200,
+        title: 'Palavra Cruzada',
+        text: 'Projeto Individual',
+        confirmButtonText: 'Jogar',
+        footer: 'Leonardo Brito - 1ADS B',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__hinge'
+        },
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url(assets/img/plus.png)',
+    });
 </script>
