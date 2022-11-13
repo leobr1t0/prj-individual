@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,10 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleCadastro.css">
+    <!-- <script src="scripts/funcoes.js"></script> -->
     <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -46,23 +49,27 @@
                 <h2>Bem-vindo!</h2>
 
                 <div class="inputBox">
+                    <label id="spErroNome"></label>
                     <input type="text" id="iptNome" required="required">
-                    <span>Digite seu nome</span>
+                    <span id="spNome">Digite seu nome</span>
                 </div>
 
                 <div class="inputBox">
+                    <label id="spErroEmail"></label>
                     <input type="text" id="iptEmail" required="required">
-                    <span>Digite seu email</span>
+                    <span id="spEmail">Digite seu email</span>
                 </div>
 
                 <div class="inputBox">
+                    <label id="spErroSenha"></label>
                     <input type="password" id="iptSenha" required="required">
-                    <span>Digite sua senha</span>
+                    <span id="spSenha">Digite sua senha</span>
                 </div>
 
                 <div class="inputBox">
+                    <label id="spErroConfSenha"></label>
                     <input type="password" id="iptConfSenha" required="required">
-                    <span>Confirme sua senha</span>
+                    <span id="spConfSenha">Confirme sua senha</span>
                 </div>
 
                 <div class="inputCad">
@@ -95,7 +102,100 @@
                 <li><i class="fa-solid fa-location-dot"></i>São Paulo Tech School</li>
             </ul>
         </div>
-            <span>Feito por Leonardo Brito - 2022 &copy;</span>
+        <span>Feito por Leonardo Brito - 2022 &copy;</span>
     </footer>
 </body>
+
 </html>
+
+<script>
+    function cadastrar() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = iptNome.value;
+        var emailVar = iptEmail.value;
+        var senhaVar = iptSenha.value;
+        var confirmacaoSenhaVar = iptConfSenha.value;
+        const regex = /[0-9]/
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            // cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            // finalizarAguardar();
+            return false;
+        } else if(Number(nomeVar) || regex.test(nomeVar)) {
+            spErroNome.innerHTML = "Digite um nome válido"
+            iptNome.style = "border: 1px solid red;"
+            spNome.style = "background-color: red; color: white;"
+            return false;
+        } else if (emailVar.indexOf('@') == -1) {
+            // alert('Digite um email válido');
+            spErroEmail.innerHTML = "Digite um email válido que possua @"
+            iptEmail.style = "border: 1px solid red;"
+            spEmail.style = "background-color: red; color: white;"
+            return false;
+        } else if(senhaVar <= 5 || confirmacaoSenhaVar <= 5) {
+            spErroSenha.innerHTML = "Digite uma senha que possua mais de 6 caracteres"
+            iptSenha.style = "border: 1px solid red;"
+            spSenha.style = "background-color: red; color: white;"
+            return false;
+        } else if(confirmacaoSenhaVar != senhaVar) {
+            spErroSenha.innerHTML = "As Senhas não se coincidem"
+            spErroConfSenha.innerHTML = "As Senhas não se coincidem"
+            iptSenha.style = "border: 1px solid red;"
+            iptConfSenha.style = "border: 1px solid red;"
+            spSenha.style = "background-color: red; color: white;"
+            spConfSenha.style = "background-color: red; color: white;"
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                // limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

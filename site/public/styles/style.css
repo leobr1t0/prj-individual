@@ -176,3 +176,130 @@ footer a {
     text-decoration: none;
 }
 /* FIM FOOTER */
+
+/* COMEÇO LOADING */
+.loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+}
+  
+.loading-div img {
+    height: 200px;
+    width: 200px;
+}
+/* FIM LOADING */
+
+/* COMEÇO FORMULÁRIOS */
+
+div.form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 500px;
+    margin: 3.7% auto;
+    border-radius: 10px;
+}
+
+.banner {
+    display: flex;
+    width: 100%;
+}
+
+.form .btn {
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+    font-size: 1.5rem;
+}
+
+.form .btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.form input, .form h2 {
+    margin-bottom: 25px;
+}
+
+.inputBox {
+    position: relative;
+    width: 250px;
+}
+
+.inputBox input {
+    height: 30px;
+    border-radius: 20px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--primary);;
+    background: transparent;
+    outline: none;
+    color: black;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: black;
+    transition: 0.5s;
+}
+
+.inputBox label {
+    color: red;
+    font-size: 0.9em;
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+}
+
+.inputBox input:valid ~ span, 
+.inputBox input:focus ~ span {
+    color: black;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 1.5px 10px;
+    background: var(--primary);
+    border-inline: 1px solid var(--primary);
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.inputBox:nth-child(2) input:valid ~ span, 
+.inputBox:nth-child(2) input:focus ~ span {
+    background: var(--primary);
+    color: black;
+    border-radius: 2px;
+}
+
+.inputBox input:valid, 
+.inputBox input:focus {
+    border: 1px solid var(--primary);
+}
+
+.inputCad {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.inputCad a span {
+    margin-left: 5px;
+}
+
+.inputCad a {
+    text-decoration: none;
+    color: black;
+}
+/* FIM FORMULÁRIOS */
