@@ -12,21 +12,30 @@
 <body>
     <header>
         <div class="container">
-            <h1>Dragon Ball</h1>
+            <a href="index.html">
+                <h1>Dragon Ball</h1>
+            </a>
             <ul class="navbar">
-                <!-- <li class="agora">Inicial</li> -->
                 <li>
-                    <a href="#palavraCruzada">Palavra Cruzada</a>
+                    <a href="#palavraCruzada">
+                        Palavra Cruzada
+                    </a>
                 </li>
                 <li>
-                    <a href="#contact">Fale Conosco</a>
+                    <a href="#contact">
+                        Fale Conosco
+                    </a>
                 </li>
                 <li>|</li>
                 <li>
-                    <a href="login.html">Login</a>
+                    <a href="login.html">
+                        Login
+                    </a>
                 </li>
                 <li>
-                    <a href="cadastro.html">Cadastro</a>
+                    <a href="cadastro.html" class="active">
+                        Cadastro
+                    </a>
                 </li>
             </ul>
         </div>
@@ -36,17 +45,25 @@
             <div class="form">
                 <h2>Bem-vindo!</h2>
 
-                <label for="iptNome">Nome:</label>
-                <input type="text" id="iptNome" placeholder="Digite seu nome">
+                <div class="inputBox">
+                    <input type="text" id="iptNome" required="required">
+                    <span>Digite seu nome</span>
+                </div>
 
-                <label for="iptEmail">E-mail:</label>
-                <input type="text" id="iptEmail" placeholder="teste@provedor.com">
+                <div class="inputBox">
+                    <input type="text" id="iptEmail" required="required">
+                    <span>Digite seu email</span>
+                </div>
 
-                <label for="iptSenha">Senha:</label>
-                <input type="password" id="iptSenha" placeholder="********">
+                <div class="inputBox">
+                    <input type="password" id="iptSenha" required="required">
+                    <span>Digite sua senha</span>
+                </div>
 
-                <label for="iptConfSenha">Confirmação de senha:</label>
-                <input type="password" id="iptConfSenha" placeholder="*********">
+                <div class="inputBox">
+                    <input type="password" id="iptConfSenha" required="required">
+                    <span>Confirme sua senha</span>
+                </div>
 
                 <button class="btnCadastro" onclick="cadastrar()">Cadastrar</button>
             </div>

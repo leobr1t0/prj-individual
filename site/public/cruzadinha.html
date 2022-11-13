@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="styles/styleCruzadinha.css" />
+    <link rel="stylesheet" href="styles/style.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="scripts/cruzadinha.js"></script>
@@ -14,6 +15,25 @@
 </head>
 
 <body onload="criaInputs()">
+    <header>
+        <div class="container">
+            <a href="index.html">
+                <h1>Dragon Ball</h1>
+            </a>
+            <ul class="navbar" style="width: 10%;">
+                <li>
+                    <a href="login.html">
+                        Login
+                    </a>
+                </li>
+                <li>
+                    <a href="cadastro.html">
+                        Cadastro
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
     <main>
         <!-- <h1>Cruzadinha de Arquitetura computacional</h1> -->
         <section class="container_questions">
@@ -166,6 +186,7 @@
                 <div id="box_Cruz11" class="box_Cruz"></div>
                 <div id="box_Cruz12" class="box_Cruz"></div>
                 <div id="box_Cruz13" class="box_Cruz"></div>
+                <div id="box_Cruz14" class="box_Cruz"></div>
             </div>
         </section>
     </main>
@@ -178,9 +199,9 @@
         imageUrl: 'https://media.tenor.com/JcuSfsgy_IoAAAAM/goku-dragon-ball.gif',
         imageHeight: 200,
         title: 'Palavra Cruzada',
-        text: 'Projeto Individual',
+        text: 'Teste seus conhecimentos em Dragon Ball!',
         confirmButtonText: 'Jogar',
-        footer: 'Leonardo Brito - 1ADS B',
+        footer: 'Projeto Individual: Leonardo Brito - 1ADS B',
         showClass: {
             popup: 'animate__animated animate__fadeInDown'
         },

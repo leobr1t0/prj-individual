@@ -20,7 +20,6 @@
 }
 
 header {
-    border-bottom: 3px solid var(--primary);  
     display: flex;
     align-items: center;
     height: 80px;
@@ -36,8 +35,16 @@ header a {
     color: var(--primary);
 }
 
+header a:hover {
+    border-bottom: 3px solid var(--primary);  
+}
+
+header .active {
+    font-weight: 800;
+}
+
 .navbar {
-    width: 400px;
+    width: 35%;
     display: flex;
     align-items: center;
     justify-content: space-between;
