@@ -1,0 +1,7 @@
+div.form {
+    gap: 15px;
+}
+
+.banner {
+    background-image: url('../assets/img/bannerLogin.jpg');
+}

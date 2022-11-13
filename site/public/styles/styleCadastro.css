@@ -11,11 +11,11 @@ div.form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 350px;
     height: 500px;
     margin: 3.7% auto;
+    border-radius: 10px;
 }
-
 
 .banner {
     display: flex;
@@ -23,7 +23,7 @@ div.form {
     width: 100%;
 }
 
-.form .btnCadastro {
+.form .btn {
     background-color: var(--primary);
     color: white;
     cursor: pointer;
@@ -31,6 +31,11 @@ div.form {
     padding: 10px;
     width: 150px;
     font-size: 1.5rem;
+}
+
+.form .btn:hover {
+    background-color: black;
+    color: white;
 }
 
 .form input, .form h2 {
@@ -41,7 +46,6 @@ div.form {
     position: relative;
     width: 250px;
 }
-
 
 .inputBox input {
     height: 30px;
@@ -89,4 +93,18 @@ div.form {
 .inputBox input:valid, 
 .inputBox input:focus {
     border: 1px solid var(--primary);
+}
+
+.inputCad {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.inputCad a span {
+    margin-left: 5px;
+}
+
+.inputCad a {
+    text-decoration: none;
+    color: black;
 }

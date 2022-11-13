@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styleLogin.css">
+    <link rel="stylesheet" href="styles/styleCadastro.css">
+    <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html">
+                <h1>Dragon Ball</h1>
+            </a>
+            <ul class="navbar">
+                <li>
+                    <a href="index.html#palavraCruzada">
+                        Palavra Cruzada
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#contact">
+                        Fale Conosco
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="login.html" class="active">
+                        Login
+                    </a>
+                </li>
+                <li>
+                    <a href="cadastro.html">
+                        Cadastro
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="banner">
+            <div class="form">
+                <h2>Bem-vindo novamente!</h2>
+
+                <div class="inputBox">
+                    <input type="text" id="iptEmail" required="required">
+                    <span>Digite seu email</span>
+                </div>
+
+                <div class="inputBox">
+                    <input type="password" id="iptSenha" required="required">
+                    <span>Digite sua senha</span>
+                </div>
+
+                <div class="inputCad">
+                    <span>Não possui uma conta?</span>
+                    <a href="cadastro.html"><span>Crie uma conta</span></a>
+                </div>
+
+                <button class="btn" onclick="entrar()">Entrar</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="social">
+            <ul class="socialLinks">
+                <a href="mailto:leonardo.oliveira@sptech.school">
+                    <li><i class="fa-solid fa-envelope"></i>Email</li>
+                </a>
+                <a href="https://www.linkedin.com/in/leonardo-brito-de-oliveira">
+                    <li><i class="fa-brands fa-linkedin"></i>LinkedIn</li>
+                </a>
+                <a href="https://github.com/leobr1t0">
+                    <li><i class="fa-brands fa-github"></i>Github</li>
+                </a>
+                <a href="">
+                    <li><i class="fa-brands fa-instagram"></i>Instagram</li>
+                </a>
+            </ul>
+            <ul class="contact">
+                <li><i class="fa-solid fa-phone"></i>11 40028922</li>
+                <li><i class="fa-solid fa-location-dot"></i>São Paulo Tech School</li>
+            </ul>
+        </div>
+            <span>Feito por Leonardo Brito - 2022 &copy;</span>
+    </footer>
+</body>
+</html>

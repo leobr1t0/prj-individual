@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de cadastro</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleCadastro.css">
     <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
@@ -17,12 +17,12 @@
             </a>
             <ul class="navbar">
                 <li>
-                    <a href="#palavraCruzada">
+                    <a href="index.html#palavraCruzada">
                         Palavra Cruzada
                     </a>
                 </li>
                 <li>
-                    <a href="#contact">
+                    <a href="index.html#contact">
                         Fale Conosco
                     </a>
                 </li>
@@ -65,7 +65,12 @@
                     <span>Confirme sua senha</span>
                 </div>
 
-                <button class="btnCadastro" onclick="cadastrar()">Cadastrar</button>
+                <div class="inputCad">
+                    <span>Já possui uma conta?</span>
+                    <a href="login.html"><span>Entrar</span></a>
+                </div>
+
+                <button class="btn" onclick="cadastrar()">Cadastrar</button>
             </div>
         </div>
     </main>
