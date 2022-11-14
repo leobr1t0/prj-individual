@@ -49,25 +49,25 @@
                 <h2>Bem-vindo!</h2>
 
                 <div class="inputBox">
-                    <label id="spErroNome"></label>
+                    <label id="lbErroNome"></label>
                     <input type="text" id="iptNome" required="required">
                     <span id="spNome">Digite seu nome</span>
                 </div>
 
                 <div class="inputBox">
-                    <label id="spErroEmail"></label>
+                    <label id="lbErroEmail"></label>
                     <input type="text" id="iptEmail" required="required">
                     <span id="spEmail">Digite seu email</span>
                 </div>
 
                 <div class="inputBox">
-                    <label id="spErroSenha"></label>
+                    <label id="lbErroSenha"></label>
                     <input type="password" id="iptSenha" required="required">
                     <span id="spSenha">Digite sua senha</span>
                 </div>
 
                 <div class="inputBox">
-                    <label id="spErroConfSenha"></label>
+                    <label id="lbErroConfSenha"></label>
                     <input type="password" id="iptConfSenha" required="required">
                     <span id="spConfSenha">Confirme sua senha</span>
                 </div>
@@ -121,38 +121,48 @@
         const regex = /[0-9]/
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            // cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            lbErroNome.innerHTML = "Digite um nome válido"
+            iptNome.style = "border: 1px solid red;"
+            lbErroEmail.innerHTML = "Digite um email válido que possua @"
+            iptEmail.style = "border: 1px solid red;"
+            lbErroSenha.innerHTML = "Digite uma senha maior de 6 caracteres"
+            iptSenha.style = "border: 1px solid red;"
+            lbErroConfSenha.innerHTML = "Confirme sua senha"
+            iptConfSenha.style = "border: 1px solid red;"
 
             // finalizarAguardar();
             return false;
-        } else if(Number(nomeVar) || regex.test(nomeVar)) {
-            spErroNome.innerHTML = "Digite um nome válido"
+        } else if (Number(nomeVar) || regex.test(nomeVar)) {
+            lbErroNome.innerHTML = "Digite um nome válido"
             iptNome.style = "border: 1px solid red;"
             spNome.style = "background-color: red; color: white;"
+            iptNome.focus();
             return false;
         } else if (emailVar.indexOf('@') == -1) {
-            // alert('Digite um email válido');
-            spErroEmail.innerHTML = "Digite um email válido que possua @"
+            lbErroEmail.innerHTML = "Digite um email válido que possua @"
             iptEmail.style = "border: 1px solid red;"
             spEmail.style = "background-color: red; color: white;"
+            iptEmail.focus();
             return false;
-        } else if(senhaVar <= 5 || confirmacaoSenhaVar <= 5) {
-            spErroSenha.innerHTML = "Digite uma senha que possua mais de 6 caracteres"
+        } else if (senhaVar.length <= 5) {
+            lbErroSenha.innerHTML = "Digite uma senha maior de 6 caracteres"
             iptSenha.style = "border: 1px solid red;"
             spSenha.style = "background-color: red; color: white;"
+            iptSenha.focus();
             return false;
-        } else if(confirmacaoSenhaVar != senhaVar) {
-            spErroSenha.innerHTML = "As Senhas não se coincidem"
-            spErroConfSenha.innerHTML = "As Senhas não se coincidem"
+        } else if (confirmacaoSenhaVar != senhaVar) {
+            lbErroSenha.innerHTML = "As Senhas não se coincidem"
+            lbErroConfSenha.innerHTML = "As Senhas não se coincidem"
             iptSenha.style = "border: 1px solid red;"
             iptConfSenha.style = "border: 1px solid red;"
             spSenha.style = "background-color: red; color: white;"
             spConfSenha.style = "background-color: red; color: white;"
+            iptConfSenha.focus();
+            iptSenha.focus();
             return false;
         }
         else {
-            setInterval(sumirMensagem, 5000)
+            // setInterval(sumirMensagem, 5000)
         }
 
         // Enviando o valor da nova input
@@ -173,9 +183,9 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
+                // cardErro.style.display = "block";
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                 setTimeout(() => {
                     window.location = "login.html";
@@ -194,8 +204,8 @@
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
 
 </script>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,10 @@
     <title>Login</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleLogin.css">
-    <link rel="stylesheet" href="styles/styleCadastro.css">
     <!-- <script src="scripts/funcoes.js"></script> -->
     <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -48,13 +49,15 @@
                 <h2>Bem-vindo novamente!</h2>
 
                 <div class="inputBox">
+                    <label for="iptEmail" id="lbErroEmail"></label>
                     <input type="text" id="iptEmail" required="required">
-                    <span>Digite seu email</span>
+                    <span id="spEmail">Digite seu email</span>
                 </div>
 
                 <div class="inputBox">
+                    <label for="iptSenha" id="lbErroSenha"></label>
                     <input type="password" id="iptSenha" required="required">
-                    <span>Digite sua senha</span>
+                    <span id="spSenha">Digite sua senha</span>
                 </div>
 
                 <div class="inputCad">
@@ -92,9 +95,10 @@
                 <li><i class="fa-solid fa-location-dot"></i>São Paulo Tech School</li>
             </ul>
         </div>
-            <span>Feito por Leonardo Brito - 2022 &copy;</span>
+        <span>Feito por Leonardo Brito - 2022 &copy;</span>
     </footer>
 </body>
+
 </html>
 
 <script>
@@ -107,13 +111,28 @@
         var senhaVar = iptSenha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            lbErroEmail.innerHTML = "Digite um email válido que possua @"
+            iptEmail.style = "border: 1px solid red;"
+            lbErroSenha.innerHTML = "Digite uma senha maior de 6 caracteres"
+            iptSenha.style = "border: 1px solid red;"
+
             // finalizarAguardar();
             return false;
-        }
+        } else if (emailVar.indexOf('@') == -1) {
+            lbErroEmail.innerHTML = "Digite um email válido que possua @"
+            iptEmail.style = "border: 1px solid red;"
+            spEmail.style = "background-color: red; color: white;"
+            iptEmail.focus();
+            return false;
+        } else if (senhaVar.length <= 5) {
+            lbErroSenha.innerHTML = "Digite uma senha maior de 6 caracteres"
+            iptSenha.style = "border: 1px solid red;"
+            spSenha.style = "background-color: red; color: white;"
+            iptSenha.focus();
+            return false;
+        } 
         else {
-            setInterval(sumirMensagem, 5000)
+            // setInterval(sumirMensagem, 5000)
         }
 
         console.log("FORM LOGIN: ", emailVar);

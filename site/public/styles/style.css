@@ -198,8 +198,8 @@ div.form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 350px;
-    height: 500px;
+    width: 20vw;
+    height: 60vh;
     margin: 3.7% auto;
     border-radius: 10px;
 }
@@ -207,6 +207,7 @@ div.form {
 .banner {
     display: flex;
     width: 100%;
+    background-size: cover;
 }
 
 .form .btn {
