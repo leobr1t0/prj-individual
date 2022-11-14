@@ -179,18 +179,31 @@ footer a {
 
 /* COMEÇO LOADING */
 .loading-div {
-    width: 50px;
+    /* width: 50px; */
     margin: auto;
     display: none;
 }
   
 .loading-div img {
-    height: 200px;
-    width: 200px;
+    height: 50px;
+    width: 50px;
 }
 /* FIM LOADING */
 
 /* COMEÇO FORMULÁRIOS */
+
+div.containerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 75vh;
+    margin: 3.7% auto;
+    padding-block: 50px;
+    background-color: white;
+    border-radius: 10px;
+}
 
 div.form {
     background-color: white;
@@ -199,9 +212,6 @@ div.form {
     justify-content: center;
     align-items: center;
     width: 20vw;
-    height: 60vh;
-    margin: 3.7% auto;
-    border-radius: 10px;
 }
 
 .banner {
@@ -276,6 +286,20 @@ div.form {
     letter-spacing: 0.2em;
     text-align: center;
     text-transform: uppercase;
+}
+
+
+/* Validação -- span erro */
+.inputBox input:valid ~ span.spError, 
+.inputBox input:focus ~ span.spError {
+    background-color: white;
+    color: black;
+}
+
+.inputError {
+    color: white;
+    background: red;
+    border: 1px solid red;
 }
 
 .inputBox:nth-child(2) input:valid ~ span, 
