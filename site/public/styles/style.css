@@ -1,3 +1,10 @@
+@font-face {
+    font-family:'saiyan-sans';
+    src: url('../assets/fonts/Saiyan-Sans.ttf') format('truetype');
+    src: url('../assets/fonts/Saiyan-Sans\ Left\ Oblique.ttf') format('truetype');
+    src: url('../assets/fonts/Saiyan-Sans\ Right\ Oblique.ttf') format('truetype');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +20,11 @@
 }
 
 /* COMEÇO HEADER */
+
+h1, h2 {
+    font-family: 'saiyan-sans', Arial, Helvetica, sans-serif;
+    letter-spacing: 10px;
+}
 
 .container {
     width: 80%;
@@ -34,6 +46,9 @@ header .container {
 header a {
     text-decoration: none;
     color: var(--primary);
+    font-family: 'saiyan-sans', Arial, Helvetica, sans-serif;
+    letter-spacing: 2.5px;
+    font-size: 1.4rem;
 }
 
 header a:hover {
@@ -45,7 +60,7 @@ header .active {
 }
 
 .navbar {
-    width: 35%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,6 +73,7 @@ header .container h1 {
     color: var(--primary);
     width: fit-content;
     font-weight: 500;
+    font-size: 2.5rem;
 }
 /* FIM HEADER */
 
