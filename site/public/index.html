@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dragon Ball - Projeto Individual</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleIndex.css">
-    <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <script src="scripts/alerts.js"></script>
 </head>
 
 <body>
@@ -36,14 +38,15 @@
     <main>
         <section class="carrossel">
             <div class="container">
-                <button class="arrow-left control" aria-label="Previous Image"><</button>
-                <button class="arrow-right control" aria-label="Next Image">></button>
-                <div class="gallery-wrapper">
-                    <div class="gallery">
-                        <img src="assets/img/banner1.jpg" alt="" class="item current-item">
-                        <img src="assets/img/banner2.jpg" alt="" class="item">
-                    </div>
-                </div>
+                <button class="arrow-left control" aria-label="Previous Image">
+                    << /button>
+                        <button class="arrow-right control" aria-label="Next Image">></button>
+                        <div class="gallery-wrapper">
+                            <div class="gallery">
+                                <img src="assets/img/banner1.jpg" alt="" class="item current-item">
+                                <img src="assets/img/banner2.jpg" alt="" class="item">
+                            </div>
+                        </div>
             </div>
         </section>
 
@@ -54,7 +57,9 @@
                     <img src="assets/img/logoIntro.png" alt="">
                 </div>
                 <div class="boxIntro">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis earum consequuntur unde perspiciatis iure voluptatem, id libero eaque iusto natus, eos cupiditate eum rem! Excepturi facilis veniam officia recusandae!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis earum consequuntur
+                        unde perspiciatis iure voluptatem, id libero eaque iusto natus, eos cupiditate eum rem!
+                        Excepturi facilis veniam officia recusandae!</p>
                 </div>
             </div>
         </section>
@@ -96,19 +101,31 @@
         <section class="contact" id="contact">
             <h2>Fale Conosco</h2>
             <div class="panelContact">
-                <form action="">
+                <form action="index.html#contact">
                     <div class="formInputs">
-                        <input type="text" id="iptNome" placeholder="Digite seu nome" required="required">
-                        <label for="iptNome">Nome</label>
-                        <input type="text" id="iptEmail" placeholder="Digite seu email" required="required">
-                        <label for="iptEmail">Email</label>
-                        <input type="text" id="iptTitulo" placeholder="Digite o títuo da mensagem" required="required">
-                        <label for="iptTitulo">Título</label>
+                        <div class="inputBox">
+                            <label for="iptNome" id="lbErroNome"></label>
+                            <input type="text" id="iptNome" required="required">
+                            <span id="spNome">Nome</span>
+                        </div>
+                        <div class="inputBox">
+                            <label for="iptEmail" id="lbErroEmail"></label>
+                            <input type="text" id="iptEmail" required="required">
+                            <span id="spEmail">Email</span>
+                        </div>
+                        <div class="inputBox">
+                            <label for="iptTitulo" id="lbErroTitulo"></label>
+                            <input type="text" id="iptTitulo" required="required">
+                            <span id="spTitulo">Título</span>
+                        </div>
                     </div>
                     <div class="formInputs2">
-                        <label for="iptAssunto">Assunto</label>
-                        <textarea id="iptAssunto" cols="10" rows="4" placeholder="Digite o assunto da mensagem"></textarea>
-                        <button class="btnForm">Enviar</button>
+                        <div class="inputBox">
+                            <label for="iptAssunto" id="lbErroAssunto"></label>
+                            <textarea id="iptAssunto" cols="10" rows="4" required="required"></textarea>
+                            <span id="spAssunto">Assunto</span>
+                        </div>
+                        <button class="btnForm" onclick="enviar()" id="btnEnviar">Enviar</button>
                     </div>
                 </form>
             </div>
@@ -135,9 +152,53 @@
                 <li><i class="fa-solid fa-location-dot"></i>São Paulo Tech School</li>
             </ul>
         </div>
-            <span>Feito por Leonardo Brito - 2022 &copy;</span>
+        <span>Feito por Leonardo Brito - 2022 &copy;</span>
     </footer>
 </body>
 
 </html>
 <script src="scripts/banner.js"></script>
+<script>
+    function enviar() {
+
+        var ctNome = iptNome.value;
+        var ctEmail = iptEmail.value;
+        var ctTitulo = iptTitulo.value;
+        var ctAssunto = iptAssunto.value;
+        const regex = /[0-9]/;
+
+        if (ctNome == '' && ctEmail == '' && ctTitulo == '' && ctAssunto == '') {
+            lbErroNome.innerHTML = "Digite um nome válido";
+            lbErroEmail.innerHTML = "Digite um email válido que possua @";
+            lbErroTitulo.innerHTML = "Digite um título válido";
+            lbErroAssunto.innerHTML = "Digite um assunto válido";
+            iptNome.classList.add("error");
+            spNome.classList.add("error");
+            iptEmail.classList.add("error");
+            spEmail.classList.add("error");
+            iptTitulo.classList.add("error");
+            spTitulo.classList.add("error");
+            iptAssunto.classList.add("error");
+            spAssunto.classList.add("error");
+            btnEnviar.classList.add("error");
+        } else if (Number(ctNome) || regex.test(ctNome) || ctNome == '') {
+            lbErroNome.innerHTML = "Digite um nome válido";
+            iptNome.classList.add("error");
+            spNome.classList.add("error");
+        } else if (ctEmail.indexOf('@') == -1 || ctEmail == '') {
+            lbErroEmail.innerHTML = "Digite um email válido que possua @";
+            iptEmail.classList.add("error");
+            spEmail.classList.add("error");
+        } else if (ctTitulo == '') {
+            lbErroTitulo.innerHTML = "Digite um título válido";
+            iptTitulo.classList.add("error");
+            spTitulo.classList.add("error");
+        } else if(ctAssunto == '') {
+            lbErroAssunto.innerHTML = "Digite um assunto válido";
+            iptAssunto.classList.add("error");
+            spAssunto.classList.add("error");
+        } else {
+            alertContact();
+        }
+    }
+</script>

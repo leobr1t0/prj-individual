@@ -1,5 +1,13 @@
+body {
+    overflow-y: hidden;
+}
+
 div.form {
     gap: 30px;
+}
+
+div.containerForm {
+    height: 58vh;
 }
 
 .banner {

@@ -8,6 +8,7 @@
 :root {
     --primary: orange;
     --secundary: blue;
+    --error: red;
     font-size: 16px;
 }
 
@@ -244,12 +245,13 @@ div.form {
     width: 250px;
 }
 
-.inputBox input {
+.inputBox input, 
+.inputBox textarea {
     height: 30px;
     border-radius: 20px;
     width: 100%;
     padding: 20px;
-    border: 1px solid var(--primary);;
+    border: 1px solid var(--primary);
     background: transparent;
     outline: none;
     color: black;
@@ -276,7 +278,9 @@ div.form {
 }
 
 .inputBox input:valid ~ span, 
-.inputBox input:focus ~ span {
+.inputBox input:focus ~ span,
+.inputBox textarea:focus ~ span, 
+.inputBox textarea:valid ~ span {
     color: black;
     transform: translateX(10px) translateY(-7px);
     font-size: 0.65em;
@@ -289,30 +293,49 @@ div.form {
 }
 
 
-/* Validação -- span erro */
-.inputBox input:valid ~ span.spError, 
-.inputBox input:focus ~ span.spError {
-    background-color: white;
-    color: black;
-}
-
-.inputError {
-    color: white;
-    background: red;
-    border: 1px solid red;
-}
-
 .inputBox:nth-child(2) input:valid ~ span, 
-.inputBox:nth-child(2) input:focus ~ span {
+.inputBox:nth-child(2) input:focus ~ span,
+.inputBox textarea:focus ~ span, 
+.inputBox textarea:valid ~ span {
     background: var(--primary);
     color: black;
     border-radius: 2px;
 }
 
 .inputBox input:valid, 
-.inputBox input:focus {
+.inputBox input:focus,
+.inputBox textarea:valid,
+.inputBox textarea:focus {
     border: 1px solid var(--primary);
 }
+
+/* COMEÇO VALIDAÇÃO -- ERRO */
+.inputBox span.error {
+    color: red;
+}
+
+.inputBox input:valid ~ span.error, 
+.inputBox input:focus ~ span.error,
+.inputBox textarea:focus ~ span.error, 
+.inputBox textarea:valid ~ span.error {
+    background: var(--error);
+    color: white;
+    border-inline: 1px solid var(--error);
+    background: red;
+    top: 20px;
+}
+
+.inputBox input.error,
+.inputBox textarea.error{
+    border: 1px solid var(--error);
+    color: var(--error);
+}
+
+.inputBox input:valid.error,
+.inputBox textarea:valid.error {
+    color: black;
+}
+/* FIM VALIDAÇÃO -- ERRO*/
 
 .inputCad {
     display: flex;

@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleLogin.css">
-    <!-- <script src="scripts/funcoes.js"></script> -->
-    <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <script src="scripts/funcoes.js"></script>
+    <script src="scripts/alerts.js"></script>
 </head>
 
 <body>
@@ -45,33 +47,29 @@
     </header>
     <main>
         <div class="banner">
-            <div class="form">
-                <h2>Bem-vindo novamente!</h2>
-
-                <div class="inputBox">
-                    <label for="iptEmail" id="lbErroEmail"></label>
-                    <input type="text" id="iptEmail" required="required">
-                    <span id="spEmail">Digite seu email</span>
+            <div class="containerForm">
+                <div class="form">
+                    <h2>Bem-vindo novamente!</h2>
+                    <div class="inputBox">
+                        <label for="iptEmail" id="lbErroEmail"></label>
+                        <input type="text" id="iptEmail" required="required">
+                        <span id="spEmail">Digite seu email</span>
+                    </div>
+                    <div class="inputBox">
+                        <label for="iptSenha" id="lbErroSenha"></label>
+                        <input type="password" id="iptSenha" required="required">
+                        <span id="spSenha">Digite sua senha</span>
+                    </div>
+                    <div class="inputCad">
+                        <span>Não possui uma conta?</span>
+                        <a href="cadastro.html"><span>Crie uma conta</span></a>
+                    </div>
+                    <button class="btn" onclick="entrar()">Entrar</button>
                 </div>
-
-                <div class="inputBox">
-                    <label for="iptSenha" id="lbErroSenha"></label>
-                    <input type="password" id="iptSenha" required="required">
-                    <span id="spSenha">Digite sua senha</span>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="assets/loading-orange.gif" id="loading-gif">
                 </div>
-
-                <div class="inputCad">
-                    <span>Não possui uma conta?</span>
-                    <a href="cadastro.html"><span>Crie uma conta</span></a>
-                </div>
-
-                <button class="btn" onclick="entrar()">Entrar</button>
             </div>
-
-            <!-- <div id="div_aguardar" class="loading-div">
-                <img src="assets/loading.gif" id="loading-gif">
-            </div> -->
-
         </div>
     </main>
     <footer>
@@ -103,32 +101,37 @@
 
 <script>
 
-
     function entrar() {
-        // aguardar();
+        aguardar();
 
         var emailVar = iptEmail.value;
         var senhaVar = iptSenha.value;
 
         if (emailVar == "" || senhaVar == "") {
             lbErroEmail.innerHTML = "Digite um email válido que possua @"
-            iptEmail.style = "border: 1px solid red;"
+            iptEmail.classList.add("error");
+            spEmail.classList.add("error");
+            iptSenha.classList.add("error");
+            spSenha.classList.add("error");
             lbErroSenha.innerHTML = "Digite uma senha maior de 6 caracteres"
-            iptSenha.style = "border: 1px solid red;"
 
-            // finalizarAguardar();
+            finalizarAguardar();
             return false;
         } else if (emailVar.indexOf('@') == -1) {
             lbErroEmail.innerHTML = "Digite um email válido que possua @"
-            iptEmail.style = "border: 1px solid red;"
-            spEmail.style = "background-color: red; color: white;"
+            iptEmail.classList.add("error");
+            spEmail.classList.add("error");
             iptEmail.focus();
+
+            finalizarAguardar();
             return false;
         } else if (senhaVar.length <= 5) {
             lbErroSenha.innerHTML = "Digite uma senha maior de 6 caracteres"
-            iptSenha.style = "border: 1px solid red;"
-            spSenha.style = "background-color: red; color: white;"
+            iptSenha.classList.add("error");
+            spSenha.classList.add("error");
             iptSenha.focus();
+            
+            finalizarAguardar();
             return false;
         } 
         else {
@@ -152,6 +155,7 @@
 
             if (resposta.ok) {
                 console.log(resposta);
+                alertLogin();
 
                 resposta.json().then(json => {
                     console.log(json);
@@ -166,7 +170,9 @@
                     }, 1000); // apenas para exibir o loading
 
                 });
-
+                
+                limparFormulario();
+                finalizarAguardar();
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
@@ -183,9 +189,4 @@
 
         return false;
     }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
 </script>

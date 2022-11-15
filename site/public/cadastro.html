@@ -123,45 +123,48 @@
 
         if (nomeVar == "" && emailVar == "" && senhaVar == "" && confirmacaoSenhaVar == "") {
             lbErroNome.innerHTML = "Digite um nome válido";
-            iptNome.style = "border: 1px solid red;";
+            iptNome.classList.add("error");
+            spNome.classList.add("error");
             lbErroEmail.innerHTML = "Digite um email válido que possua @";
-            iptEmail.style = "border: 1px solid red;";
+            iptEmail.classList.add("error");
+            spEmail.classList.add("error");
             lbErroSenha.innerHTML = "Digite uma senha maior de 6 caracteres";
-            iptSenha.style = "border: 1px solid red;";
+            iptSenha.classList.add("error");
+            spSenha.classList.add("error");
             lbErroConfSenha.innerHTML = "Confirme sua senha";
-            iptConfSenha.style = "border: 1px solid red;";
+            iptConfSenha.classList.add("error");
+            spConfSenha.classList.add("error");
 
             finalizarAguardar();
             return false;
         } else if (Number(nomeVar) || regex.test(nomeVar) || nomeVar == '') {
             lbErroNome.innerHTML = "Digite um nome válido";
-            iptNome.style = "border: 1px solid red;";
-            spNome.classList.add("spError")
-            // spNome.style = "background-color: red; color: white;";
+            iptNome.classList.add("error");
+            spNome.classList.add("error");
             iptNome.focus();
 
             finalizarAguardar();
             return false;
         } else if (emailVar.indexOf('@') == -1 || emailVar == '') {
             lbErroEmail.innerHTML = "Digite um email válido que possua @";
-            iptEmail.style = "border: 1px solid red;";
-            spEmail.style = "background-color: red; color: white;";
+            iptEmail.classList.add("error");
+            spEmail.classList.add("error");
             iptEmail.focus();
 
             finalizarAguardar();
             return false;
         } else if (senhaVar.length <= 5 || senhaVar == '') {
             lbErroSenha.innerHTML = "Digite uma senha maior de 6 caracteres";
-            iptSenha.style = "border: 1px solid red;";
-            spSenha.style = "background-color: red; color: white;";
+            iptSenha.classList.add("error");
+            spSenha.classList.add("error");
             iptSenha.focus();
 
             finalizarAguardar();
             return false;
         } else if (confirmacaoSenhaVar == '') {
             lbErroConfSenha.innerHTML = "Confirme sua senha";
-            iptConfSenha.style = "border: 1px solid red;";
-            spConfSenha.style = "background-color: red; color: white;";
+            iptConfSenha.classList.add("error");
+            spConfSenha.classList.add("error");
             iptConfSenha.focus();
 
             finalizarAguardar();
@@ -169,10 +172,10 @@
         } else if (confirmacaoSenhaVar != senhaVar) {
             lbErroSenha.innerHTML = "As Senhas não se coincidem";
             lbErroConfSenha.innerHTML = "As Senhas não se coincidem";
-            iptSenha.style = "border: 1px solid red;";
-            iptConfSenha.style = "border: 1px solid red;";
-            spSenha.style = "background-color: red; color: white;";
-            spConfSenha.style = "background-color: red; color: white;";
+            iptSenha.classList.add("error");
+            iptConfSenha.classList.add("error");
+            spSenha.classList.add("error");
+            spConfSenha.classList.add("error");
             iptConfSenha.focus();
             iptSenha.focus();
 
