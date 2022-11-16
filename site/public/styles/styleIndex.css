@@ -7,6 +7,7 @@ section.intro .boxesIntro {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 40px;
 }
 
 .boxIntro:nth-child(2) {
@@ -22,12 +23,127 @@ section.intro {
     margin-bottom: 4%;
 }
 
+/* COMEÇO SECTION PERSONAGENS */
+
+/* section.personagens {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.slider-container {
+    max-width: 1300px;
+    width: 100%;
+    /* background-color: green; */
+    padding: 40px;
+}
+
+.slider-content {
+    margin: 0 40px;
+}
+
+.card {
+    width: 320px;
+    border-radius: 25px;
+    background-color: var(--secundary);
+}
+
+.image-content, 
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.image-content {
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 0;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 25px 25px 0 25px;
+}
+
+.overlay:before,
+.overlay:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: var(--primary);
+}
+
+.overlay:after {
+    border-radius: 0 25px 0 0;
+    background-color: var(--secundary);
+}
+
+.card-image {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.card-image .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--secundary);
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--txColor);
+}
+
+.desc {
+    font-size: 1rem;
+    margin-top: 5px;
+    color: var(--txColor);
+    text-align: center;
+    z-index: 999;
+}
+
+.btnCard {
+    border: none;
+    font-size: 1rem;
+    color: var(--txColor);
+    padding: 8px 16px;
+    background-color: var(--primary);
+    border: 1px solid var(--secundary);
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.btnCard:hover {
+    background-color: var(--secundary);
+    border: 1px solid var(--primary);
+}
+/* FIM SECTION PERSONAGENS */
+
 section.valores .boxesValores {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     /* border: 2px solid red; */
-    margin-bottom: 4%;
+    padding: 40px;
 }
 
 .valores h2 {
@@ -93,7 +209,7 @@ section.palavraCruzada .minigame .panel{
 
 .panel .btnGame {
     background-color: var(--primary);
-    color: white;
+    color: var(--txColor);
     cursor: pointer;
     border-radius: 10px;
     padding: 10px;
@@ -102,7 +218,7 @@ section.palavraCruzada .minigame .panel{
 }
 
 .panel .btnGame:hover {
-    background-color: black;
+    background-color: var(--secundary);
 }
 
 /* div#map {
@@ -118,7 +234,7 @@ section.palavraCruzada .minigame .panel{
     top: 15px;
 }
 
-.btnEnviar.error {
+.btnForm.error {
     margin-top: 30%;
 }
 
@@ -137,12 +253,13 @@ section.contact .panelContact {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 2.5%;
+    /* margin-top: 2.5%; */
 }
 
 section.contact form {
     display: flex;
     gap: 20%;
+    padding: 40px;
 }
 
 section.contact .formInputs input {
@@ -185,9 +302,16 @@ form .formInputs input:not(:last-child) {
     background-color: var(--primary);
     color: white;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .formInputs2 button:hover {
-    background-color: black;
+    background-color: var(--secundary);
 }
 
+.inputBox input:valid ~ span.error, 
+.inputBox input:focus ~ span.error,
+.inputBox textarea:focus ~ span.error, 
+.inputBox textarea:valid ~ span.error {
+    top: 20px;
+}

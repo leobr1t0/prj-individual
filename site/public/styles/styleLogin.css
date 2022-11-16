@@ -6,6 +6,10 @@ div.form {
     gap: 30px;
 }
 
+div.form h2 {
+    text-align: center;
+}
+
 div.containerForm {
     height: 58vh;
 }

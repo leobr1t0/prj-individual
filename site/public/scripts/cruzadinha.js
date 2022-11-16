@@ -600,6 +600,7 @@ function verificar() {
             title: 'Parabéns',
             text: 'Você acertou todas questões da palavra cruzada!',
             confirmButtonText: 'Obrigado(a)',
+            confirmButtonColor: '#ff924b',
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
             },
@@ -608,7 +609,7 @@ function verificar() {
             },
             width: 600,
             padding: '3em',
-            color: '#716add',
+            color: '#ff924b',
             background: '#fff url(assets/img/plus.png)',
         }).then((result) => {
         if (result.isConfirmed) {

@@ -8,6 +8,7 @@
     <title>Dragon Ball - Projeto Individual</title>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleIndex.css">
     <script src="scripts/alerts.js"></script>
@@ -16,7 +17,8 @@
 <body>
     <header>
         <div class="container">
-            <h1>Dragon Ball</h1>
+            <img src="assets/img/dbLogo.png" alt="">
+            <!-- <h1>Dragon Ball</h1> -->
             <ul class="navbar">
                 <!-- <li class="agora">Inicial</li> -->
                 <li>
@@ -38,15 +40,14 @@
     <main>
         <section class="carrossel">
             <div class="container">
-                <button class="arrow-left control" aria-label="Previous Image">
-                    << /button>
-                        <button class="arrow-right control" aria-label="Next Image">></button>
-                        <div class="gallery-wrapper">
-                            <div class="gallery">
-                                <img src="assets/img/banner1.jpg" alt="" class="item current-item">
-                                <img src="assets/img/banner2.jpg" alt="" class="item">
-                            </div>
-                        </div>
+                <button class="arrow-left control" aria-label="Previous Image"><</button>
+                <button class="arrow-right control" aria-label="Next Image">></button>
+                <div class="gallery-wrapper">
+                    <div class="gallery">
+                        <img src="assets/img/banner1.jpg" alt="" class="item current-item">
+                        <!-- <img src="assets/img/banner3.png" alt="" class="item"> -->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -57,12 +58,106 @@
                     <img src="assets/img/logoIntro.png" alt="">
                 </div>
                 <div class="boxIntro">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis earum consequuntur
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis earum consequuntur
                         unde perspiciatis iure voluptatem, id libero eaque iusto natus, eos cupiditate eum rem!
-                        Excepturi facilis veniam officia recusandae!</p>
+                        Excepturi facilis veniam officia recusandae!
+                    </p>
                 </div>
             </div>
         </section>
+
+        <section class="personagens">
+            <h2>Alguns Personagens</h2>
+            <div class="slider-container swiper">
+                <div class="slider-content">
+                    <div class="card-wrapper swiper-wrapper">
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+
+                                <div class="card-image">
+                                    <img src="assets/img/goku-card-icon.png" alt="" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">Son Goku</h2>
+                                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <!-- <button class="btnCard">Teste</button> -->
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+
+                                <div class="card-image">
+                                    <img src="assets/img/vegeta-card-icon.png" alt="" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">Vegeta</h2>
+                                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <!-- <button class="btnCard">Teste</button> -->
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+
+                                <div class="card-image">
+                                    <img src="assets/img/gohan-card-icon.png" alt="" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">Gohan</h2>
+                                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <!-- <button class="btnCard">Teste</button> -->
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+
+                                <div class="card-image">
+                                    <img src="assets/img/android17-card-icon.png" alt="" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">Android 17</h2>
+                                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <!-- <button class="btnCard">Teste</button> -->
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+
+                                <div class="card-image">
+                                    <img src="assets/img/android18-card-icon.png" alt="" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">Android 18</h2>
+                                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <!-- <button class="btnCard">Teste</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- <section class="favMusics">
+            <h2>Músicas favoritas</h2>
+            <div class="boxesMusicas">
+                <div class="boxMusica">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2x1fGRP6FCJg7KRbmZ3Zcp?utm_source=generator&theme=0" width="300px" height="152px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section> -->
 
         <section class="valores">
             <h2>Valores</h2>
@@ -92,7 +187,7 @@
             <div class="minigame">
                 <div class="panel">
                     <h2>Palavra Cruzada</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Teste seus conhecimentos em Dragon Ball clicando abaixo!!</p>
                     <a href="cruzadinha.html"><button class="btnGame">Jogar</button></a>
                 </div>
             </div>
@@ -154,6 +249,7 @@
         </div>
         <span>Feito por Leonardo Brito - 2022 &copy;</span>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </body>
 
 </html>
@@ -193,7 +289,7 @@
             lbErroTitulo.innerHTML = "Digite um título válido";
             iptTitulo.classList.add("error");
             spTitulo.classList.add("error");
-        } else if(ctAssunto == '') {
+        } else if (ctAssunto == '') {
             lbErroAssunto.innerHTML = "Digite um assunto válido";
             iptAssunto.classList.add("error");
             spAssunto.classList.add("error");

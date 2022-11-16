@@ -1,21 +1,4 @@
-// let count = 1;
-// document.getElementById("radio1").checked = true;
-
-// setInterval( function() {
-//     passaImagem();
-// }, 5000);
-
-// function passaImagem() {
-//     count++;
-
-//     if(count > 4) {
-//         count = 1;
-//     }
-
-//     document.getElementById("radio"+count).checked = true;
-
-// }
-
+// COMEÇO BANNER
 const controls = document.querySelectorAll('.control');
 let currentItem = 0;
 const items = document.querySelectorAll('.item');
@@ -25,17 +8,17 @@ controls.forEach(control => {
     control.addEventListener('click', () => {
         const isLeft = control.classList.contains('arrow-left');
 
-        if(isLeft) {
+        if (isLeft) {
             currentItem -= 1;
         } else {
             currentItem += 1;
         }
 
-        if(currentItem >= maxItems) {
+        if (currentItem >= maxItems) {
             currentItem = 0;
         }
 
-        if(currentItem < 0) {
+        if (currentItem < 0) {
             currentItem = maxItems - 1;
         }
 
@@ -49,3 +32,24 @@ controls.forEach(control => {
         items[currentItem].classList.add("current-item");
     });
 });
+
+// FIM BANNER
+
+// COMEÇO CARD SLIDER
+var swiper = new Swiper(".slider-content", {
+    slidesPerView: 5,
+    spaceBetween: 30,
+    slidesPerGroup: 5,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+// FIM CARD SLIDER
