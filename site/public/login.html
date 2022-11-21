@@ -162,12 +162,12 @@
                     console.log(json);
                     console.log(JSON.stringify(json));
 
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.EMAIL_USUARIO = json.emailUsuario;
+                    sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
 
                     setTimeout(function () {
-                        window.location = "index.html";
+                        window.location = "pageQuizes.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

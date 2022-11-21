@@ -3,7 +3,7 @@ body {
 }
 
 div.form {
-    gap: 30px;
+    width: 100%;
 }
 
 div.form h2 {
@@ -12,8 +12,13 @@ div.form h2 {
 
 div.containerForm {
     height: 58vh;
+    width: 25vw;
 }
 
 .banner {
     background-image: url('../assets/img/bannerLogin.jpg');
+}
+
+.inputBox label {
+    bottom: 10px;
 }

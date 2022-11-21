@@ -9,9 +9,13 @@
     border-radius: 50px;
 }
 
+body {
+    overflow-y: hidden;
+}
+
 main {
     display: flex;
-    width: 100vw;
+    /* width: 100vw; */
     margin: auto;
     background: linear-gradient(180deg, rgba(231, 106, 36, 1)  0%, rgba(255, 146, 75, 1) 65%, rgba(2, 0, 8, 1) 130%);
 }
@@ -42,7 +46,7 @@ section .containerQst {
 
 .questionGroup {
     width: 55vw;
-    height: 43vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,6 +114,7 @@ details[open] summary {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-right: 5px;
 }
 
 .box_totalCruz {

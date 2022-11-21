@@ -22,7 +22,7 @@
 
 /* COMEÇO HEADER */
 
-h1, h2:not(h2.name) {
+h1, h2:not(h2.name){
     font-family: 'saiyan-sans', Arial, Helvetica, sans-serif;
     letter-spacing: 10px;
 }
@@ -65,7 +65,7 @@ header .active {
 }
 
 .navbar {
-    width: 40%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -220,7 +220,8 @@ div.containerForm {
     align-items: center;
     justify-content: center;
     margin: auto;
-    height: 75vh;
+    /* height: 75vh; */
+    width: 25vw;
     margin: 3.7% auto;
     padding-block: 50px;
     background-color: white;
@@ -294,7 +295,7 @@ div.form {
     color: red;
     font-size: 0.9em;
     position: relative;
-    bottom: 20px;
+    bottom: 10px;
     left: 10px;
 }
 
