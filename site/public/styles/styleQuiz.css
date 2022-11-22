@@ -1,0 +1,61 @@
+
+div.questionContainer {
+    padding-block: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    /* background-image: url("../assets/img/teste.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+
+div.questionContainer div.questPanel {
+    background-color: white;
+    height: 70vh;
+    width: 25vw;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.question h2 {
+    text-align: center;
+}
+
+div.questionContainer .question {
+    display: none;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+}
+
+.question img {
+    width: 100px;
+    height: 100px;
+    align-self: center;
+}
+
+div.questionContainer .question.first {
+    display: flex;
+}
+
+.btnGroup {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 5px;
+}
+
+.btnGroup button {
+    width: 200px;
+    padding: 5px;
+    background-color: var(--primary);
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btnGroup button:hover {
+    background-color: var(--secundary);
+}
