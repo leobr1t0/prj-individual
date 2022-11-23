@@ -12,7 +12,7 @@ div.questionContainer {
 
 div.questionContainer div.questPanel {
     background-color: white;
-    height: 70vh;
+    height: 75vh;
     width: 25vw;
     border-radius: 10px;
     padding: 20px;
@@ -46,7 +46,7 @@ div.questionContainer .question.first {
     gap: 5px;
 }
 
-.btnGroup button {
+.btnGroup button, .btnGroup + button  {
     width: 200px;
     padding: 5px;
     background-color: var(--primary);
@@ -56,6 +56,15 @@ div.questionContainer .question.first {
     cursor: pointer;
 }
 
-.btnGroup button:hover {
+.btnGroup button:hover, .btnGroup + button:hover {
+    background-color: var(--secundary);
+}
+
+.btnGroup + button {
+    width: 80%;
+    margin: auto;
+}
+
+.btnGroup button:focus {
     background-color: var(--secundary);
 }
