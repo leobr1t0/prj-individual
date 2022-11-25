@@ -40,7 +40,7 @@ div.boxQuiz h3 {
     margin-bottom: 2.5%;
 }
 
-div.boxQuiz a {
+div.boxQuiz button {
     width: 200px;
     color: white;
     border: 1px solid black;
@@ -51,8 +51,20 @@ div.boxQuiz a {
     cursor: pointer;
     text-decoration: none;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-div.boxQuiz a:hover {
+div.boxQuiz button:hover {
     background-color: var(--secundary);
+}
+
+div.boxesQuiz button a {
+    padding-inline: 43.8%;
+    padding-block: 2%;
+    /* background-color: blue; */
+    text-decoration: none;
+    text-align: center;
+    color: white;
 }

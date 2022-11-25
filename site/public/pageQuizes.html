@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="styles/stylePageQuizes.css">
     <script src="scripts/funcoes.js"></script>
 </head>
+
 <body onload="validarSessao()">
     <header>
         <div class="container">
@@ -35,15 +37,16 @@
     <main>
         <section class="carrossel">
             <div class="container">
-                <button class="arrow-left control" aria-label="Previous Image"><</button>
-                <button class="arrow-right control" aria-label="Next Image">></button>
-                <div class="gallery-wrapper">
-                    <div class="gallery">
-                        <img src="assets/img/banner1.jpg" alt="" class="item current-item">
-                        <img src="assets/img/banner2.jpg" alt="" class="item">
-                        <img src="assets/img/banner3.jpg" alt="" class="item">
-                    </div>
-                </div>
+                <button class="arrow-left control" aria-label="Previous Image">
+                    << /button>
+                        <button class="arrow-right control" aria-label="Next Image">></button>
+                        <div class="gallery-wrapper">
+                            <div class="gallery">
+                                <img src="assets/img/banner1.jpg" alt="" class="item current-item">
+                                <img src="assets/img/banner2.jpg" alt="" class="item">
+                                <img src="assets/img/banner3.jpg" alt="" class="item">
+                            </div>
+                        </div>
             </div>
         </section>
 
@@ -53,17 +56,17 @@
                 <div class="boxQuiz">
                     <h3>Quiz 1</h3>
                     <img src="assets/img/esfera-dragao1-quiz.png" alt="">
-                    <a href="quiz1.html">Jogar</a>
+                    <button onclick="pegarQuiz(this.value)" value="1"><a href="quiz1.html">Jogar</a></button>
                 </div>
                 <div class="boxQuiz">
                     <h3>Quiz 2</h3>
                     <img src="assets/img/esfera-dragao2-quiz.png" alt="">
-                    <a href="quiz2.html">Jogar</a>
+                    <button onclick="pegarQuiz(this.value)" value="2"><a href="quiz2.html">Jogar</a></button>
                 </div>
                 <div class="boxQuiz">
                     <h3>Quiz 3</h3>
                     <img src="assets/img/esfera-dragao3-quiz.png" alt="">
-                    <a href="quiz3.html">Jogar</a>
+                    <button onclick="pegarQuiz(this.value)" value="3"><a href="quiz3.html">Jogar</a></button>
                 </div>
             </div>
         </section>
@@ -92,7 +95,11 @@
         <span>Feito por Leonardo Brito - 2022 &copy;</span>
     </footer>
 </body>
+
 </html>
 <script>
     sessionName.innerHTML = sessionStorage.NOME_USUARIO;
+    function pegarQuiz(value) {
+        sessionStorage.QUIZ = value;
+    }
 </script>

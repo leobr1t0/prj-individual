@@ -4,6 +4,9 @@ function validarSessao() {
 
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
+    var quiz = sessionStorage.QUIZ;
+
+    // window.alert(quiz);
 
     var b_usuario = document.getElementById("sessionName");
 
