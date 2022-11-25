@@ -1,38 +1,40 @@
-var respostas = ['nappa', 'galik ho', 'namekusei', '4', 'genki dama', '150 milhoes', 'trunks', 'dr. gero', 'androide 19', 'tenshinhan'];
+var respostasQ1 = ['nappa', 'galik ho', 'namekusei', '4', 'genki dama', '150 milhoes', 'trunks', 'dr. gero', 'androide 19', 'tenshinhan'];
+var respostasQ2 = ['super vegeta', 'final flash', 'gohan', 'mr. satan', 'semente dos deuses', 'androide 16', 'super saiyajin 2', 'kamehameha', 'goten','videl'];
+var respostasQ3 = ['grande saiyaman', '25° torneio de artes marciais', 'supremo senhor kaioh', 'majin vegeta', 'dabura', 'regeneração', 'gotenks', 'vegetto', 'uub', 'super saiyajin 4'];
 
-var countPgt = 1;
+var pergunta = 1;
 var pontos = 0;
 var resp = '';
 
 function apareceQst() {
-    if (countPgt == 2) {
+    if (pergunta == 2) {
         qst2.style.display = "flex";
         qst1.style.display = "none";
-    } else if (countPgt == 3) {
+    } else if (pergunta == 3) {
         qst3.style.display = "flex";
         qst2.style.display = "none";
-    } else if (countPgt == 4) {
+    } else if (pergunta == 4) {
         qst4.style.display = "flex";
         qst3.style.display = "none";
-    } else if (countPgt == 5) {
+    } else if (pergunta == 5) {
         qst5.style.display = "flex";
         qst4.style.display = "none";
-    } else if (countPgt == 6) {
+    } else if (pergunta == 6) {
         qst6.style.display = "flex";
         qst5.style.display = "none";
-    } else if (countPgt == 7) {
+    } else if (pergunta == 7) {
         qst7.style.display = "flex";
         qst6.style.display = "none";
-    } else if (countPgt == 8) {
+    } else if (pergunta == 8) {
         qst8.style.display = "flex";
         qst7.style.display = "none";
-    } else if (countPgt == 9) {
+    } else if (pergunta == 9) {
         qst9.style.display = "flex";
         qst8.style.display = "none";
-    } else if (countPgt == 10) {
+    } else if (pergunta == 10) {
         qst10.style.display = "flex";
         qst9.style.display = "none";
-    } else if(countPgt == 11) {
+    } else if(pergunta == 11) {
         verificar();
     }
 }
@@ -49,14 +51,14 @@ function confirmar() {
     if(resp.length == 0) {
         alert("Selecione uma opção para prosseguir")
     } else {
-        for (let i = 0; i <= respostas.length+1; i++) {
-            if (respostas.indexOf(resp) > -1) {
+        for (let i = 0; i <= respostasQ1.length+1; i++) {
+            if (respostasQ1.indexOf(resp) > -1 || respostasQ2.indexOf(resp) > -1 || respostasQ3.indexOf(resp) > -1) {
                 pontos++;
-                countPgt++;
-                console.log(countPgt)
+                pergunta++;
+                console.log(pergunta)
                 break;
             } else {
-                countPgt++;
+                pergunta++;
                 break;
             }
         }

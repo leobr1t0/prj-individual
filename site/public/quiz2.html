@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 2 - Projeto Individual</title>
+    <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/stylePageQuizes.css">
+    <link rel="stylesheet" href="styles/styleQuiz.css">
+    <script src="scripts/funcoes.js"></script>
+    <script src="scripts/quiz.js"></script>
+</head>
+
+<body onload="validarSessao()">
+    <header>
+        <div class="container">
+            <a href="index.html">
+                <img src="assets/img/dbLogo.png" alt="">
+            </a>
+            <!-- <h1>Dragon Ball</h1> -->
+            <ul class="navbar">
+                <!-- <li class="agora">Inicial</li> -->
+                <li>
+                    <a href="pageQuizes.html#cardsQuizzes">Quizzes</a>
+                </li>
+                <li>|</li>
+                <li>
+                    Olá, <span id="sessionName"></span>
+                </li>
+                <li>
+                    <button onclick="limparSessao()">Sair</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="questionContainer">
+            <div class="questPanel">
+                <div class="question first" id="qst1">
+                    <h2>Questao 1</h2>
+                    <img src="assets/img/imgQstQuiz1.png" alt="">
+                    <p class="qstEnum" id="qstEnum2">
+                        Do que Vegeta se entitula durante sua luta contra a segunda forma de Cell?
+                    </p>
+                    <div class="btnGroup">
+                        <button onclick="selecionar(this.value)" value="majin vegeta">Majin Vegeta</button>
+                        <button onclick="selecionar(this.value)" value="mega vegeta">Mega Vegeta</button>
+                        <button onclick="selecionar(this.value)" value="super vegeta">Super Vegeta</button>
+                        <button onclick="selecionar(this.value)" value="ultra vegeta">Ultra Vegeta</button>
+                    </div>
+                    <button onclick="confirmar()">Confirmar</button>
+                </div>
+                <div class="question" id="qst2">
+                    <h2>Questao 2</h2>
+                    <img src="assets/img/imgQstQuiz1.png" alt="">
+                    <p class="qstEnum" id="qstEnum2">
+                        Quando Cell alcança sua forma perfeita, qual golpe Vegeta usa para tentar derrotá-lo?
+                    </p>
+                    <div class="btnGroup">
+                        <button onclick="selecionar(this.value)" value="galik ho">Galik ho</button>
+                        <button onclick="selecionar(this.value)" value="big bang attack">Big Bang Attack</button>
+                        <button onclick="selecionar(this.value)" value="final flash">Final Flash</button>
+                        <button onclick="selecionar(this.value)" value="final impact">Final Impact</button>
+                    </div>
+                    <button onclick="confirmar()">Confirmar</button>
+                </div>
+                <div class="question" id="qst3">
+                    <h2>Questao 3</h2>
+                    <img src="assets/img/imgQstQuiz1.png" alt="">
+                    <p class="qstEnum" id="qstEnum3">
+                        Com quem Goku passa 1 ano treinando dentro da Sala do Tempo?
+                    </p>
+                    <div class="btnGroup">
+                        <button onclick="selecionar(this.value)" value="goten">Goten</button>
+                        <button onclick="selecionar(this.value)" value="vegeta">Vegeta</button>
+                        <button onclick="selecionar(this.value)" value="gohan">Gohan</button>
+                        <button onclick="selecionar(this.value)" value="piccolo">Piccolo</button>
+                    </div>
+                    <button onclick="confirmar()">Confirmar</button>
+                </div>
+                <div class="question" id="qst4">
+                    <h2>Questao 4</h2>
+                    <img src="assets/img/imgQstQuiz1.png" alt="">
+                    <p class="qstEnum" id="qstEnum4">
+                        Quem é o primeiro a enfrentar Cell em seu torneio?
+                    </p>
+                    <div class="btnGroup">
+                        <button onclick="selecionar(this.value)" value="gohan">Gohan</button>
+                        <button onclick="selecionar(this.value)" value="goku">Goku</button>
+                        <button onclick="selecionar(this.value)" value="videl">Videl</button>
+                        <button onclick="selecionar(this.value)" value="mr. satan">Mr. Satan</button>
+                    </div>
+                    <button onclick="confirmar()">Confirmar</button>
+                </div>
+                <div class="question" id="qst5">
+                    <h2>Questao 5</h2>
+                    <img src="assets/img/imgQstQuiz1.png" alt="">
+                    <p class="qstEnum" id="qstEnum5">
+                        O que Goku dá a Cell após se render da luta entre eles?
+                    </p>
+                    <div class="btnGroup">
+                        <button onclick="selecionar(this.value)" value="poder">Poder</button>
+                        <button onclick="selecionar(this.value)" value="semente dos deuses">Semente dos Deuses</button>
+                        <button onclick="selecionar(this.value)" value="esfera do dragão">Esfera do Dragão</button>
+                        <button onclick="selecionar(this.value)" value="dinheiro">Dinheiro</button>
+                    </div>
+                    <button onclick="confirmar()">Confirmar</button>
+                </div>
+                <div class="question" id="qst6">
+                    <h2>Questao 6</h2>
+                    <img src="assets/img/imgQstQuiz1.png" alt="">
+                    <p class="qstEnum" id="qstEnum6">
+                        Quem tenta se sacrificar para destruir Cell Perfeito?
+                    </p>
+                    <div class="btnGroup">
+                        <button onclick="selecionar(this.value)" value="androide 18">Andróide 18</button>
+                        <button onclick="selecionar(this.value)" value="androide 17">Andróide 17</button>
+                        <button onclick="selecionar(this.value)" value="androide 16">Andróide 16</button>
+                        <button onclick="selecionar(this.value)" value="gohan">Gohan</button>
+                    </div>
+                    <button onclick="confirmar()">Confirmar</button>
+                </div>
+                <div class="question" id="qst7">
+                    <h2>Questao 7</h2>
+                    <img src="assets/img/imgQstQuiz1.png" alt="">
+                    <p class="qstEnum" id="qstEnum7">
+                        Que transformação Gohan obteve após Cell matar o Andróide 16?
+                    </p>
+                    <div class="btnGroup">
+                        <button onclick="selecionar(this.value)" value="super saiyajin 1">Super Saiyajn 1</button>
+                        <button onclick="selecionar(this.value)" value="mistico">Místico</button>
+                        <button onclick="selecionar(this.value)" value="super saiyajin 2">Super Saiyajn 2</button>
+                        <button onclick="selecionar(this.value)" value="super saiyajin 3">Super Saiyajn 3</button>
+                    </div>
+                    <button onclick="confirmar()">Confirmar</button>
+                </div>
+                <div class="question" id="qst8">
+                    <h2>Questao 8</h2>
+                    <img src="assets/img/imgQstQuiz1.png" alt="">
+                    <p class="qstEnum" id="qstEnum8">
+                        Qual técnica Gohan e Cell usam um contra o outro ao final do confronto?
+                    </p>
+                    <div class="btnGroup">
+                        <button onclick="selecionar(this.value)" value="kaio-ken">Kaio-Ken</button>
+                        <button onclick="selecionar(this.value)" value="kamehameha">Kamehameha</button>
+                        <button onclick="selecionar(this.value)" value="kienzan">Kienzan</button>
+                        <button onclick="selecionar(this.value)" value="genki dama">Genki Dama</button>
+                    </div>
+                    <button onclick="confirmar()">Confirmar</button>
+                </div>
+                <div class="question" id="qst9">
+                    <h2>Questao 9</h2>
+                    <img src="assets/img/imgQstQuiz1.png" alt="">
+                    <p class="qstEnum" id="qstEnum9">
+                        Qual o nome do irmão mais novo de Gohan?
+                    </p>
+                    <div class="btnGroup">
+                        <button onclick="selecionar(this.value)" value="gotun">Gotun</button>
+                        <button onclick="selecionar(this.value)" value="gotin">Gotin</button>
+                        <button onclick="selecionar(this.value)" value="goten">Goten</button>
+                        <button onclick="selecionar(this.value)" value="gotrunks">Gotrunks</button>
+                    </div>
+                    <button onclick="confirmar()">Confirmar</button>
+                </div>
+                <div class="question" id="qst10">
+                    <h2>Questao 10</h2>
+                    <img src="assets/img/imgQstQuiz1.png" alt="">
+                    <p class="qstEnum" id="qstEnum10">
+                        Qual o nome da filha do Sr. Satan?
+                    </p>
+                    <div class="btnGroup">
+                        <button onclick="selecionar(this.value)" value="videl">Videl</button>
+                        <button onclick="selecionar(this.value)" value="bra">Bra</button>
+                        <button onclick="selecionar(this.value)" value="chi-chi">Chi-Chi</button>
+                        <button onclick="selecionar(this.value)" value="bulma">Bulma</button>
+                    </div>
+                    <button onclick="confirmar()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="social">
+            <ul class="socialLinks">
+                <a href="mailto:leonardo.oliveira@sptech.school">
+                    <li><i class="fa-solid fa-envelope"></i>Email</li>
+                </a>
+                <a href="https://www.linkedin.com/in/leonardo-brito-de-oliveira">
+                    <li><i class="fa-brands fa-linkedin"></i>LinkedIn</li>
+                </a>
+                <a href="https://github.com/leobr1t0">
+                    <li><i class="fa-brands fa-github"></i>Github</li>
+                </a>
+                <a href="">
+                    <li><i class="fa-brands fa-instagram"></i>Instagram</li>
+                </a>
+            </ul>
+            <ul class="contact">
+                <li><i class="fa-solid fa-phone"></i>11 40028922</li>
+                <li><i class="fa-solid fa-location-dot"></i>São Paulo Tech School</li>
+            </ul>
+        </div>
+        <span>Feito por Leonardo Brito - 2022 &copy;</span>
+    </footer>
+</body>
+
+</html>
