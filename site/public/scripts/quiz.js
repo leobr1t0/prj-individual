@@ -2,8 +2,8 @@ var respostasQ1 = ['nappa', 'galik ho', 'namekusei', '4', 'genki dama', '150 mil
 var respostasQ2 = ['super vegeta', 'final flash', 'gohan', 'mr. satan', 'semente dos deuses', 'androide 16', 'super saiyajin 2', 'kamehameha', 'goten', 'videl'];
 var respostasQ3 = ['grande saiyaman', '25° torneio de artes marciais', 'supremo senhor kaioh', 'majin vegeta', 'dabura', 'regeneração', 'gotenks', 'vegetto', 'uub', 'super saiyajin 4'];
 
-var idQuiz = sessionStorage.QUIZ;
-var idUsuario = sessionStorage.ID_USUARIO;
+var idQuiz = Number(sessionStorage.QUIZ);
+var idUsuario = Number(sessionStorage.ID_USUARIO);
 var pergunta = 1;
 var pontos = 0;
 var resp = '';
@@ -151,7 +151,7 @@ function verificar() {
         });
     }
 
-    fetch("/quizes/cadastrar", {
+    fetch("/quizes/cadastrarPontuacao", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

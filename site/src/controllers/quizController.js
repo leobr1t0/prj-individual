@@ -25,7 +25,7 @@ function listar(req, res) {
         );
 }
 
-function cadastrar(req, res) {
+function cadastrarPontuacao(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var pontos = req.body.pontosServer;
     var perPontos = req.body.percentualServer;
@@ -64,6 +64,6 @@ function cadastrar(req, res) {
 
 module.exports = {
     testar,
-    cadastrar,
-    listar,
+    cadastrarPontuacao,
+    listar
 }

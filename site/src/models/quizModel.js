@@ -24,5 +24,5 @@ function cadastrarPontuacao(pontos, perPontos, usuario, id) {
 
 module.exports = {
     cadastrarPontuacao,
-    listar,
+    listar
 };
