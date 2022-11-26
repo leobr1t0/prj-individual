@@ -1,5 +1,5 @@
 
-var usuarioModel = require("../models/quizModel");
+var quizModel = require("../models/quizModel");
 
 var sessoes = [];
 
@@ -27,21 +27,24 @@ function listar(req, res) {
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
+    var pontos = req.body.pontosServer;
+    var perPontos = req.body.percentualServer;
+    var usuario = req.body.usuarioServer;
+    var id = req.body.quizServer;
 
     // Faça as validações dos valores
-    if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
-    } else if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
-    } else if (senha == undefined) {
-        res.status(400).send("Sua senha está undefined!");
+    if (pontos == undefined) {
+        res.status(400).send("Seus pontos está undefined!");
+    } else if (perPontos == undefined) {
+        res.status(400).send("Seus perPontos está undefined!");
+    } else if (usuario == undefined) {
+        res.status(400).send("Seu usuario está undefined!");
+    } else if (id == undefined) {
+        res.status(400).send("Seu id está undefined!");
     } else {
-        
+
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha)
+        quizModel.cadastrarPontuacao(pontos, perPontos, usuario, id)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -60,8 +63,7 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-    entrar,
+    testar,
     cadastrar,
     listar,
-    testar
 }

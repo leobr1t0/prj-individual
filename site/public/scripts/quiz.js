@@ -1,8 +1,9 @@
 var respostasQ1 = ['nappa', 'galik ho', 'namekusei', '4', 'genki dama', '150 milhoes', 'trunks', 'dr. gero', 'androide 19', 'tenshinhan'];
-var respostasQ2 = ['super vegeta', 'final flash', 'gohan', 'mr. satan', 'semente dos deuses', 'androide 16', 'super saiyajin 2', 'kamehameha', 'goten','videl'];
+var respostasQ2 = ['super vegeta', 'final flash', 'gohan', 'mr. satan', 'semente dos deuses', 'androide 16', 'super saiyajin 2', 'kamehameha', 'goten', 'videl'];
 var respostasQ3 = ['grande saiyaman', '25° torneio de artes marciais', 'supremo senhor kaioh', 'majin vegeta', 'dabura', 'regeneração', 'gotenks', 'vegetto', 'uub', 'super saiyajin 4'];
 
-var idQuiz = 0;
+var idQuiz = sessionStorage.QUIZ;
+var idUsuario = sessionStorage.ID_USUARIO;
 var pergunta = 1;
 var pontos = 0;
 var resp = '';
@@ -45,9 +46,9 @@ function apareceQst() {
         qst10.style.display = "flex";
         qst9.style.display = "none";
         resp = '';
-    } else if(pergunta == 11) {
-        verificar();
+    } else if (pergunta == 11) {
         perPontos = (pontos / 10) * 100
+        verificar();
         resp = '';
     }
 }
@@ -57,10 +58,10 @@ function selecionar(value) {
 }
 
 function confirmar() {
-    if(resp.length == 0) {
+    if (resp.length == 0) {
         alert("Selecione uma opção para prosseguir")
     } else {
-        for (let i = 0; i <= respostasQ1.length+1; i++) {
+        for (let i = 0; i <= respostasQ1.length + 1; i++) {
             if (respostasQ1.indexOf(resp) > -1 || respostasQ2.indexOf(resp) > -1 || respostasQ3.indexOf(resp) > -1) {
                 pontos++;
                 pergunta++;
@@ -150,17 +151,6 @@ function verificar() {
         });
     }
 
-    if(quiz == 1) {
-        idQuiz = 1;
-        alert(idQuiz);
-    } else if(quiz == 2) {
-        idQuiz = 2;
-        alert(idQuiz);
-    } else if(quiz == 3) {
-        idQuiz = 3;
-        alert(idQuiz);
-    }
-
     fetch("/quizes/cadastrar", {
         method: "POST",
         headers: {
@@ -172,32 +162,25 @@ function verificar() {
 
             pontosServer: pontos,
             percentualServer: perPontos,
-
+            usuarioServer: idUsuario,
+            quizServer: idQuiz
         })
     }).then(function (resposta) {
 
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-            alertCadastro();
 
             setTimeout(() => {
-                window.location = "login.html";
+                window.location = "pageQuizes.html";
             }, "3000")
 
-            limparFormulario();
-            finalizarAguardar();
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
     });
 
     return false;
-}
-
-module.exports =  {
-    validarSessao
 }
