@@ -8,6 +8,23 @@ function testar(req, res) {
     res.json("ESTAMOS FUNCIONANDO!");
 }
 
+function listarPlacar(req, res) {
+    quizModel.listarPlacares()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 function listarPorUsuario(req, res) {
     var id = req.params.idUsuario;
 
@@ -68,5 +85,6 @@ function cadastrarPontuacao(req, res) {
 module.exports = {
     testar,
     cadastrarPontuacao,
-    listarPorUsuario
+    listarPorUsuario,
+    listarPlacar
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placar geral</title>
+    <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/stylePontuacoes.css">
+    <script src="scripts/funcoes.js"></script>
+</head>
+
+<body onload="validarSessao(), carregarPontuacao()">
+    <div class="containerPlacar">
+        <div class="sideBar">
+            <a href="index.html">
+                <img src="assets/img/dbLogo.png" alt="">
+            </a>
+            <div class="helloMessage">
+                Olá, <span id="sessionName"></span>
+            </div>
+            <ul class="sideButtons">
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="pageQuizes.html">Quizzes</a></li>
+                <li><button onclick="limparSessao()">Sair</button></li>
+            </ul>
+        </div>
+        <main>
+            <div class="placar">
+                <div class="placarWrapper">
+                    <h2>Placar Geral - Média 3 quizes</h2>
+                    <hr>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Nome</th>
+                                <th>Pontuação</th>
+                                <th>Percentual</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pontuacao">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
+<script>
+    sessionName.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function carregarPontuacao() {
+        fetch(`/quizes/listarTodos`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                   
+                    for(let i = 0; i <= json.length; i++) {
+                        pontuacao.innerHTML += `
+                            <tr id="points">
+                                <td>${i + 1}</td>
+                                <td>${json[i].nome}</td>
+                                <td>${json[i].pontuacao}pts</td>
+                                <td>${json[i].perPontuacao}%</td>
+                            </tr>
+                        `
+                    }
+
+                });
+
+            } else {
+                throw ("Houve um erro ao tentar realizar a listagem!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+</script>

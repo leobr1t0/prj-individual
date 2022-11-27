@@ -1,0 +1,94 @@
+.containerPlacar {
+    display: flex;
+}
+
+main {
+    width: 90%;
+    background-color: red;
+}
+
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    border-right: 2px solid var(--secundary);
+    height: 100vh;
+    width: 10vw;
+    gap: 50px;
+}
+
+.sideBar img {
+    width: 100px;
+}
+
+.sideBar a:hover {
+    border-bottom: 2px solid white;
+}
+
+.sideBar .sideButtons {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.sideBar .sideButtons li {
+    list-style: none;
+}
+
+.sideBar .sideButtons li a {
+    text-decoration: none; 
+    color: white;
+}
+
+.sideBar .sideButtons li a:hover {
+    border-bottom: 2px solid white;
+}
+
+.sideBar .sideButtons li button {
+    width: 50px;
+    color: white;
+    background-color: var(--secundary);
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sideBar .sideButtons li button:hover {
+    background-color: var(--primary);
+    border: 2px solid white;
+}
+
+.placar {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.placarWrapper {
+    background-color: white;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+}
+
+table #pontuacao #points {
+    text-transform: capitalize;
+}

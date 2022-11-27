@@ -14,7 +14,6 @@ function validarSessao() {
     if (email != null && nome != null) {
         // window.alert(`Seja bem-vindo, ${nome}!`);
         b_usuario.innerHTML = nome;
-        b_usuarioProfile.innerHTML = nome;
 
         // finalizarAguardar();
     } else {

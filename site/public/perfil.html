@@ -71,7 +71,7 @@
                 <div class="option">
                     <a href="pontuacoes.html">
                         <img src="assets/img/dash-icon.png" alt="Dashboard icon" class="optionImg">
-                        <span class="optionText">Pontuação geral</span>
+                        <span class="optionText">Pontuações</span>
                     </a>
                 </div>
             </div>
@@ -110,8 +110,14 @@
 
     const ctxPoint = document.getElementById('myChartPoint');
     const ctxPerPoint = document.getElementById('myChartPerPoint');
-    var pontos = [];
-    var quizes = [];
+    // var pontos = [];
+    // var quizes = [];
+    var ptQz1 = 0;
+    var ptQz2 = 0;
+    var ptQz3 = 0;
+    var perQz1 = 0;
+    var perQz2 = 0;
+    var perQz3 = 0;
 
     function carregarGrafico() {
         var idUsuario = Number(sessionStorage.ID_USUARIO);
@@ -128,13 +134,33 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                   
-                    for (let i = 0; i < json.length; i++) {
-                        pontos.push(json[i].pontuacao)
-                        quizes = json[i].nomeQuiz;
+
+                    for(let i = 0; i < json.length; i++) {
+                        if(json[i].fkQuiz == 1) {
+                            ptQz1 = json[i].pontuacao;
+                            perQz1 = json[i].perPontuacao;
+                        }
+                        if(json[i].fkQuiz == 2) {
+                            ptQz2 = json[i].pontuacao;
+                            perQz2 = json[i].perPontuacao;
+                        }
+                        if(json[i].fkQuiz == 3) {
+                            ptQz3 = json[i].pontuacao;
+                            perQz3 = json[i].perPontuacao;
+                        }
+
+                        console.log(ptQz1)
+                        console.log(ptQz2)
+                        console.log(ptQz3)
+
                     }
-                        console.log(`pontos pos push ${pontos}`)
-                        console.log(`quiz pos push ${quizes}`)
+                   
+                    // for (let i = 0; i < json.length; i++) {
+                    //     pontos.push(json[i].pontuacao)
+                    //     quizes = json[i].nomeQuiz;
+                    // }
+                    //     console.log(`pontos pos push ${pontos}`)
+                    //     console.log(`quiz pos push ${quizes}`)
                 });
 
             } else {
@@ -145,42 +171,44 @@
         });
     }
 
-    new Chart(ctxPoint, {
-        type: 'bar',
-        data: {
-            labels: quizes,
-            datasets: [{
-                label: 'Pontos',
-                data: pontos,
-                borderWidth: 1
-            }],
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                },
+    setTimeout(()=> {
+        new Chart(ctxPoint, {
+            type: 'bar',
+            data: {
+                labels: ['Quiz 1', 'Quiz 2', 'Quiz 3'],
+                datasets: [{
+                    label: 'Pontos',
+                    data: [ptQz1, ptQz2, ptQz3],
+                    borderWidth: 1
+                }],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                }
             }
-        }
-    });
-
-    new Chart(ctxPerPoint, {
-        type: 'bar',
-        data: {
-            labels: quizes,
-            datasets: [{
-                label: 'Percentual de pontos',
-                data: pontos,
-                borderWidth: 1
-            }],
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                },
+        });
+    
+        new Chart(ctxPerPoint, {
+            type: 'bar',
+            data: {
+                labels: ['Quiz 1', 'Quiz 2', 'Quiz 3'],
+                datasets: [{
+                    label: 'Percentual de pontos',
+                    data: [perQz1, perQz2, perQz3],
+                    borderWidth: 1
+                }],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                }
             }
-        }
-    });
+        });
+    }, "150")
 
 </script>
