@@ -1,0 +1,104 @@
+main {
+    background-color: red;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    padding: 1.5%;
+    font-size: 2.9rem;
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profileHeader {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 79%;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 10px;
+    border: 1px solid var(--secundary);
+    width: 80%;
+    height: 250px;
+    margin: auto;
+    padding: 20px;
+}
+
+.profile .profileWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile .helloMessage {
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.profile span {
+    margin-left: 5px;
+}
+
+.formProfile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.traco {
+    height: 150px;
+    border: 2px solid var(--secundary);
+    border-radius: 10px;
+    background-color: var(--secundary);
+}
+
+.otherOptions {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 10px;
+    border: 1px solid var(--secundary);
+    width: 80%;
+    height: 90px;
+    margin: auto;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    padding: 5px;
+}
+
+.option a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+}
+
+.option img {
+    align-self: center;
+    width: 50px;
+}
+

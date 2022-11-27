@@ -10,6 +10,10 @@ ul.navbar li button {
     cursor: pointer;
 }
 
+ul.navbar li button:hover {
+    border-bottom: 3px solid var(--txColor);  
+}
+
 .cardsQuizzes {
     padding-bottom: 40px;
 }

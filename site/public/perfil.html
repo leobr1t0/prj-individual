@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/stylePageQuizes.css">
+    <link rel="stylesheet" href="styles/stylePerfil.css">
+    <script src="scripts/funcoes.js"></script>
+</head>
+
+<body onload="validarSessao(), carregarGrafico()">
+    <header>
+        <div class="container">
+            <a href="index.html">
+                <img src="assets/img/dbLogo.png" alt="">
+            </a>
+            <!-- <h1>Dragon Ball</h1> -->
+            <ul class="navbar">
+                <!-- <li class="agora">Inicial</li> -->
+                <li>
+                    <a href="pageQuizes.html#cardsQuizzes">Quizzes</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="perfil.html" id="sessionName"></a>
+                </li>
+                <li>
+                    <button onclick="limparSessao()">Sair</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <h2>Perfil</h2>
+        <div class="profileContainer">
+            <div class="profile">
+                <div class="profileHeader">
+                    <h3>Pontuação por quiz</h3>
+                    <div class="helloMessage">
+                        Olá, <span id="sessionNameProfile"></span>
+                    </div>
+                    <h3>Percentual de pontuação</h3>
+                </div>
+                <div class="profileWrapper">
+                    <div class="formProfile">
+                        <div>
+                            <canvas id="myChartPoint"></canvas>
+                        </div>
+                    </div>
+                    <div class="traco"></div>
+                    <div class="formProfile">
+                        <div>
+                            <canvas id="myChartPerPoint"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="otherOptions">
+                <div class="option">
+                    <a href="pageQuizes.html">
+                        <img src="assets/img/quiz-icon.png" alt="Quiz icon" class="optionImg">
+                        <span class="optionText">Quizzes</span>
+                    </a>
+                </div>
+                <div class="option">
+                    <a href="pontuacoes.html">
+                        <img src="assets/img/dash-icon.png" alt="Dashboard icon" class="optionImg">
+                        <span class="optionText">Pontuação geral</span>
+                    </a>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </main>
+    <footer>
+        <div class="social">
+            <ul class="socialLinks">
+                <a href="mailto:leonardo.oliveira@sptech.school">
+                    <li><i class="fa-solid fa-envelope"></i>Email</li>
+                </a>
+                <a href="https://www.linkedin.com/in/leonardo-brito-de-oliveira">
+                    <li><i class="fa-brands fa-linkedin"></i>LinkedIn</li>
+                </a>
+                <a href="https://github.com/leobr1t0">
+                    <li><i class="fa-brands fa-github"></i>Github</li>
+                </a>
+                <a href="">
+                    <li><i class="fa-brands fa-instagram"></i>Instagram</li>
+                </a>
+            </ul>
+            <ul class="contact">
+                <li><i class="fa-solid fa-phone"></i>11 40028922</li>
+                <li><i class="fa-solid fa-location-dot"></i>São Paulo Tech School</li>
+            </ul>
+        </div>
+        <span>Feito por Leonardo Brito - 2022 &copy;</span>
+    </footer>
+</body>
+
+</html>
+<script>
+    sessionName.innerHTML = sessionStorage.NOME_USUARIO;
+    sessionNameProfile.innerHTML = sessionStorage.NOME_USUARIO;
+
+    const ctxPoint = document.getElementById('myChartPoint');
+    const ctxPerPoint = document.getElementById('myChartPerPoint');
+    var pontos = [];
+    var quizes = [];
+
+    function carregarGrafico() {
+        var idUsuario = Number(sessionStorage.ID_USUARIO);
+        fetch(`/quizes/listar/${idUsuario}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                   
+                    for (let i = 0; i < json.length; i++) {
+                        pontos.push(json[i].pontuacao)
+                        quizes = json[i].nomeQuiz;
+                    }
+                        console.log(`pontos pos push ${pontos}`)
+                        console.log(`quiz pos push ${quizes}`)
+                });
+
+            } else {
+                throw ("Houve um erro ao tentar realizar a listagem!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+    new Chart(ctxPoint, {
+        type: 'bar',
+        data: {
+            labels: quizes,
+            datasets: [{
+                label: 'Pontos',
+                data: pontos,
+                borderWidth: 1
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            }
+        }
+    });
+
+    new Chart(ctxPerPoint, {
+        type: 'bar',
+        data: {
+            labels: quizes,
+            datasets: [{
+                label: 'Percentual de pontos',
+                data: pontos,
+                borderWidth: 1
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            }
+        }
+    });
+
+</script>

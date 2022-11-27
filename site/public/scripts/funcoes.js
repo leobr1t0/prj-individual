@@ -9,10 +9,12 @@ function validarSessao() {
     // window.alert(quiz);
 
     var b_usuario = document.getElementById("sessionName");
+    var b_usuarioProfile = document.getElementById("sessionNameProfile");
 
     if (email != null && nome != null) {
         // window.alert(`Seja bem-vindo, ${nome}!`);
         b_usuario.innerHTML = nome;
+        b_usuarioProfile.innerHTML = nome;
 
         // finalizarAguardar();
     } else {

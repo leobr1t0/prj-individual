@@ -8,8 +8,11 @@ function testar(req, res) {
     res.json("ESTAMOS FUNCIONANDO!");
 }
 
-function listar(req, res) {
-    quizModel.listar()
+function listarPorUsuario(req, res) {
+    var id = req.params.idUsuario;
+
+    console.log(id);
+    quizModel.listarUsuario(id)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -65,5 +68,5 @@ function cadastrarPontuacao(req, res) {
 module.exports = {
     testar,
     cadastrarPontuacao,
-    listar
+    listarPorUsuario
 }

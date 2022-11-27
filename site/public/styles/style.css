@@ -73,6 +73,12 @@ header .active {
     color: var(--txColor);
 }
 
+#sessionName, #sessionNameProfile {
+    text-transform: capitalize;
+    font-family: Arial;
+    font-size: 1rem;
+}
+
 
 /* header .container h1 {
     color: var(--primary);
