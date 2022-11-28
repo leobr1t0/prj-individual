@@ -4,18 +4,16 @@ div.questionContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
-    /* background-image: url("../assets/img/teste.jpg");
     background-size: cover;
-    background-repeat: no-repeat; */
 }
 
 div.questionContainer div.questPanel {
-    background-color: white;
-    height: 75vh;
+    background-color: rgba(255, 255, 255, 0.966);
+    height: 75.6vh;
     width: 25vw;
     border-radius: 10px;
     padding: 20px;
+    border: 2px solid var(--secundary);
 }
 
 .question h2 {

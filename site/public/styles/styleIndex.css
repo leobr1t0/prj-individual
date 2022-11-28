@@ -287,6 +287,7 @@ section.contact div.form .formInputs2 textarea {
     height: 129px; 
     width: 250px;
     border-radius: 10px;
+    resize: none;
 }
 
 div.form label {

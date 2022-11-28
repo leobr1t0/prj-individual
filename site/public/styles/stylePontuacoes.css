@@ -4,7 +4,11 @@
 
 main {
     width: 90%;
-    background-color: red;
+    background-image: url("../assets/img/bannerPontuacoes.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sideBar {
@@ -15,7 +19,7 @@ main {
     background-color: var(--primary);
     color: white;
     border-right: 2px solid var(--secundary);
-    height: 100vh;
+    height: 80.9vh;
     width: 10vw;
     gap: 50px;
 }
@@ -65,13 +69,14 @@ main {
 }
 
 .placar {
+    width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 35px;
 }
 
 .placarWrapper {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.966);
     width: 55%;
     display: flex;
     justify-content: center;
@@ -82,6 +87,7 @@ main {
     gap: 20px;
     border-radius: 10px;
     padding: 10px;
+    border: 2px solid var(--secundary);
 }
 
 table {

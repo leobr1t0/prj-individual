@@ -1,5 +1,7 @@
 main {
-    background-color: red;
+    background-image: url("../assets/img/bannerPerfil.png");
+    background-size: cover;
+    overflow-y: hidden;
 }
 
 h2 {
@@ -28,9 +30,9 @@ h2 {
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.856);
+    background-color: rgba(255, 255, 255, 0.966);
     border-radius: 10px;
-    border: 1px solid var(--secundary);
+    border: 2px solid var(--secundary);
     width: 80%;
     height: 250px;
     margin: auto;
@@ -50,7 +52,7 @@ h2 {
 }
 
 .profile span {
-    margin-left: 5px;
+    margin-left: 2px;
 }
 
 .formProfile {
@@ -70,9 +72,9 @@ div.traco {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgba(255, 255, 255, 0.856);
+    background-color: rgba(255, 255, 255, 0.966);
     border-radius: 10px;
-    border: 1px solid var(--secundary);
+    border: 2px solid var(--secundary);
     width: 80%;
     height: 90px;
     margin: auto;
@@ -100,5 +102,9 @@ div.traco {
 .option img {
     align-self: center;
     width: 50px;
+}
+
+footer {
+    height: 110px;
 }
 
