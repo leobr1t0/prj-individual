@@ -55,12 +55,15 @@ section.intro {
     flex-direction: column;
     align-items: center;
     padding: 10px 14px;
+    height: 200px;
+    gap: 20px;
 }
 
 .image-content {
     position: relative;
     row-gap: 5px;
     padding: 25px 0;
+    justify-content: center;
 }
 
 .overlay {
@@ -159,10 +162,12 @@ section.valores .boxesValores {
     width: 20vw;
     /* border: 2px solid green; */
     text-align: center;
+    gap: 5px;
 }
 
 .boxValor img {
     width: 200px;
+    height: 213.94px;
 }
 
 .boxValor .traco {

@@ -18,7 +18,7 @@
     <header>
         <div class="container">
             <a href="index.html">
-                <img src="assets/img/dbLogo.png" alt="">
+                <img src="assets/img/dbLogo.png" alt="Logo dragon ball">
             </a>
             <!-- <h1>Dragon Ball</h1> -->
             <ul class="navbar">
@@ -134,6 +134,12 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
+                    // ptQz1 = json[0].pontuacao;
+                    // perQz1 = json[0].perPontuacao;
+                    // ptQz2 = json[1].pontuacao;
+                    // perQz2 = json[1].perPontuacao;
+                    // ptQz3 = json[2].pontuacao;
+                    // perQz3 = json[2].perPontuacao;
 
                     for(let i = 0; i < json.length; i++) {
                         if(json[i].fkQuiz == 1) {
@@ -209,6 +215,6 @@
                 }
             }
         });
-    }, "150")
+    }, "5000")
 
 </script>
