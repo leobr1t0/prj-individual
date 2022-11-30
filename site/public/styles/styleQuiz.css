@@ -1,4 +1,6 @@
-
+body {
+    overflow-y: hidden;
+}
 div.questionContainer {
     padding-block: 40px;
     display: flex;
@@ -14,6 +16,7 @@ div.questionContainer div.questPanel {
     border-radius: 10px;
     padding: 20px;
     border: 2px solid var(--secundary);
+    box-shadow: 2px 2px 2px var(--secundary);
 }
 
 .question h2 {
@@ -52,6 +55,7 @@ div.questionContainer .question.first {
     border: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
+    box-shadow: 2px 2px 2px black;
 }
 
 .btnGroup button:hover, .btnGroup + button:hover {

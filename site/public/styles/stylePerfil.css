@@ -37,6 +37,7 @@ h2 {
     height: 250px;
     margin: auto;
     padding: 20px;
+    box-shadow: 2px 2px 2px var(--secundary);
 }
 
 .profile .profileWrapper {
@@ -78,6 +79,7 @@ div.traco {
     width: 80%;
     height: 90px;
     margin: auto;
+    box-shadow: 2px 2px 2px var(--secundary);
 }
 
 .option {
