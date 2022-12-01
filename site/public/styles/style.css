@@ -384,3 +384,13 @@ div.form {
     color: black;
 }
 /* FIM FORMULÁRIOS */
+
+::-webkit-scrollbar {
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--secundary);
+}

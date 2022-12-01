@@ -171,9 +171,9 @@ function verificar() {
 
         if (resposta.ok) {
 
-            setTimeout(() => {
-                window.location = "pageQuizes.html";
-            }, "3000")
+            // setTimeout(() => {
+            //     window.location = "pageQuizes.html";
+            // }, "3000")
 
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
