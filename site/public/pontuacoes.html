@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placar geral</title>
     <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/stylePontuacoes.css">
     <script src="scripts/funcoes.js"></script>
@@ -48,6 +49,12 @@
             </div>
         </main>
     </div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
     <footer>
         <div class="social">
             <ul class="socialLinks">
@@ -75,6 +82,7 @@
 
 </html>
 <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
     sessionName.innerHTML = sessionStorage.NOME_USUARIO;
 
     function carregarPontuacao() {
@@ -91,8 +99,8 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                   
-                    for(let i = 0; i <= json.length; i++) {
+
+                    for (let i = 0; i <= json.length; i++) {
                         pontuacao.innerHTML += `
                             <tr id="points">
                                 <td>${i + 1}</td>

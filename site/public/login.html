@@ -8,6 +8,7 @@
     <title>Login</title>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleLogin.css">
     <script src="scripts/funcoes.js"></script>
@@ -72,6 +73,12 @@
                 </div>
             </div>
         </div>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="social">
@@ -101,6 +108,7 @@
 </html>
 
 <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
 
     function entrar() {
         aguardar();
@@ -131,10 +139,10 @@
             iptSenha.classList.add("error");
             spSenha.classList.add("error");
             iptSenha.focus();
-            
+
             finalizarAguardar();
             return false;
-        } 
+        }
         else {
             // setInterval(sumirMensagem, 5000)
         }
@@ -171,7 +179,7 @@
                     }, "3000"); // apenas para exibir o loading
 
                 });
-                
+
                 limparFormulario();
                 finalizarAguardar();
             } else {

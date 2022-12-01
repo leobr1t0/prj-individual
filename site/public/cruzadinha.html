@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="styles/styleCruzadinha.css" />
     <link rel="stylesheet" href="styles/style.css">
@@ -192,12 +193,19 @@
                 <div id="box_Cruz14" class="box_Cruz"></div>
             </div>
         </section>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
     </main>
 </body>
 
 </html>
 
 <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
     Swal.fire({
         imageUrl: 'https://media.tenor.com/JcuSfsgy_IoAAAAM/goku-dragon-ball.gif',
         imageHeight: 200,

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizes</title>
     <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/stylePageQuizes.css">
     <script src="scripts/funcoes.js"></script>
@@ -37,16 +38,17 @@
     <main>
         <section class="carrossel">
             <div class="container">
-                <button class="arrow-left control" aria-label="Previous Image"><</button>
-                <button class="arrow-right control" aria-label="Next Image">></button>
-                <div class="gallery-wrapper">
-                    <div class="gallery">
-                        <img src="assets/img/banner1.png" alt="Banner 1" class="item current-item">
-                        <img src="assets/img/banner2.png" alt="Banner 2" class="item">
-                        <img src="assets/img/banner3.png" alt="Banner 3" class="item">
-                        <img src="assets/img/banner4.jpg" alt="Banner 4" class="item">
-                    </div>
-                </div>
+                <button class="arrow-left control" aria-label="Previous Image">
+                    << /button>
+                        <button class="arrow-right control" aria-label="Next Image">></button>
+                        <div class="gallery-wrapper">
+                            <div class="gallery">
+                                <img src="assets/img/banner1.png" alt="Banner 1" class="item current-item">
+                                <img src="assets/img/banner2.png" alt="Banner 2" class="item">
+                                <img src="assets/img/banner3.png" alt="Banner 3" class="item">
+                                <img src="assets/img/banner4.jpg" alt="Banner 4" class="item">
+                            </div>
+                        </div>
             </div>
         </section>
 
@@ -93,11 +95,18 @@
                 <li><i class="fa-solid fa-location-dot"></i>São Paulo Tech School</li>
             </ul>
         </div>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
     </footer>
 </body>
 
 </html>
 <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
     sessionName.innerHTML = sessionStorage.NOME_USUARIO;
     function pegarQuiz(value) {
         sessionStorage.QUIZ = value;

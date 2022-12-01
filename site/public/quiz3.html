@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz 3 - Projeto Individual</title>
     <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/stylePageQuizes.css">
@@ -61,10 +62,14 @@
                         Para qual torneio Goku retorna a Terra por 1 dia para participar?
                     </p>
                     <div class="btnGroup">
-                        <button onclick="selecionar(this.value)" value="25° torneio de artes marciais">25° Torneio de Artes Marciais</button>
-                        <button onclick="selecionar(this.value)" value="24° torneio de artes marciais">24° Torneio de Artes Marciais</button>
-                        <button onclick="selecionar(this.value)" value="23° torneio de artes marciais">23° Torneio de Artes Marciais</button>
-                        <button onclick="selecionar(this.value)" value="26° torneio de artes marciais">26° Torneio de Artes Marciais</button>
+                        <button onclick="selecionar(this.value)" value="25° torneio de artes marciais">25° Torneio de
+                            Artes Marciais</button>
+                        <button onclick="selecionar(this.value)" value="24° torneio de artes marciais">24° Torneio de
+                            Artes Marciais</button>
+                        <button onclick="selecionar(this.value)" value="23° torneio de artes marciais">23° Torneio de
+                            Artes Marciais</button>
+                        <button onclick="selecionar(this.value)" value="26° torneio de artes marciais">26° Torneio de
+                            Artes Marciais</button>
                     </div>
                     <button onclick="confirmar()">Confirmar</button>
                 </div>
@@ -78,7 +83,8 @@
                         <button onclick="selecionar(this.value)" value="kaioh do sul">Kaioh do Sul</button>
                         <button onclick="selecionar(this.value)" value="kaioh do norte">Kaioh do Norte</button>
                         <button onclick="selecionar(this.value)" value="senhor kaioh">Senhor Kaioh</button>
-                        <button onclick="selecionar(this.value)" value="supremo senhor kaioh">Supremo Senhor Kaioh</button>
+                        <button onclick="selecionar(this.value)" value="supremo senhor kaioh">Supremo Senhor
+                            Kaioh</button>
                     </div>
                     <button onclick="confirmar()">Confirmar</button>
                 </div>
@@ -182,7 +188,16 @@
                 </div>
             </div>
         </div>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
     </main>
 </body>
 
 </html>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>

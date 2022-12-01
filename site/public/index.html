@@ -9,6 +9,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/b8710b5ea0.js" crossorigin="anonymous"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleIndex.css">
@@ -41,19 +42,20 @@
         </div>
     </header>
     <main>
-        
+
         <section class="carrossel">
             <div class="container">
-                <button class="arrow-left control" aria-label="Previous Image"><</button>
-                <button class="arrow-right control" aria-label="Next Image">></button>
-                <div class="gallery-wrapper">
-                    <div class="gallery">
-                        <img src="assets/img/banner1.png" alt="banner 1" class="item current-item">
-                        <img src="assets/img/banner2.png" alt="banner 2" class="item">
-                        <img src="assets/img/banner3.png" alt="banner 3" class="item">
-                        <img src="assets/img/banner4.jpg" alt="banner 4" class="item">
-                    </div>
-                </div>
+                <button class="arrow-left control" aria-label="Previous Image">
+                    << /button>
+                        <button class="arrow-right control" aria-label="Next Image">></button>
+                        <div class="gallery-wrapper">
+                            <div class="gallery">
+                                <img src="assets/img/banner1.png" alt="banner 1" class="item current-item">
+                                <img src="assets/img/banner2.png" alt="banner 2" class="item">
+                                <img src="assets/img/banner3.png" alt="banner 3" class="item">
+                                <img src="assets/img/banner4.jpg" alt="banner 4" class="item">
+                            </div>
+                        </div>
             </div>
         </section>
 
@@ -65,7 +67,9 @@
                 </div>
                 <div class="boxIntro">
                     <p>
-                        Dragon ball é uma franquia japonesa criada por Akira Toriyama em 1984 e foi animado pelo estúdio Toei Animation em 1986. Atualmente conta com mais de 670 episódios contando toda saga de goku e seus amigos, indo de Dragon Ball (1986-1989) até Super Dragon Ball Heroes (2018-atualmente).
+                        Dragon ball é uma franquia japonesa criada por Akira Toriyama em 1984 e foi animado pelo estúdio
+                        Toei Animation em 1986. Atualmente conta com mais de 670 episódios contando toda saga de goku e
+                        seus amigos, indo de Dragon Ball (1986-1989) até Super Dragon Ball Heroes (2018-atualmente).
                     </p>
                 </div>
             </div>
@@ -112,7 +116,8 @@
                             </div>
                             <div class="card-content">
                                 <h2 class="name">Bills</h2>
-                                <p class="desc">Eu sou um deus com um coração, mas há uma coisa que não posso tolerar: pessoas que não respeitam os outros.</p>
+                                <p class="desc">Eu sou um deus com um coração, mas há uma coisa que não posso tolerar:
+                                    pessoas que não respeitam os outros.</p>
                             </div>
                         </div>
                         <div class="card swiper-slide">
@@ -125,7 +130,8 @@
                             </div>
                             <div class="card-content">
                                 <h2 class="name">Whis</h2>
-                                <p class="desc">Você não conseguiu proteger seu planeta por causa de sua própria bondade.
+                                <p class="desc">Você não conseguiu proteger seu planeta por causa de sua própria
+                                    bondade.
                                 </p>
                             </div>
                         </div>
@@ -134,7 +140,8 @@
                                 <span class="overlay"></span>
 
                                 <div class="card-image">
-                                    <img src="assets/img/wong-goku-card-icon.png" alt="Icone goku jovem" class="card-img">
+                                    <img src="assets/img/wong-goku-card-icon.png" alt="Icone goku jovem"
+                                        class="card-img">
                                 </div>
                             </div>
                             <div class="card-content">
@@ -155,21 +162,21 @@
             <div class="boxesValores">
                 <div class="boxValor">
                     <img src="assets/img/valores-img1.png" alt="Icone goku">
-                    <h3>Resiliência</h3>
+                    <h3>Determinação</h3>
                     <div class="traco"></div>
-                    <p>Independente do desafio, goku e seus amigos enfrentam sem desanimar</p>
+                    <p>Se manter determinado e buscar melhorar sempre.</p>
                 </div>
                 <div class="boxValor">
                     <img src="assets/img/valores-img2.png" alt="Icone mestre kame">
-                    <h3>Lealdade</h3>
+                    <h3>Resiliência</h3>
                     <div class="traco"></div>
-                    <p>Goku permanece leal a seus amigos desde o início de sua jornada</p>
+                    <p>Se manter estável e firme independente das adversidades.</p>
                 </div>
                 <div class="boxValor">
                     <img src="assets/img/valores-img3.png" alt="Icone pan">
-                    <h3>Valor 1</h3>
+                    <h3>Disciplina</h3>
                     <div class="traco"></div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Manter a disciplina a todo momento.</p>
                 </div>
             </div>
         </section>
@@ -216,6 +223,12 @@
                 </div>
             </div>
         </section>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+          </div>
     </main>
     <footer>
         <div class="social">
@@ -246,6 +259,15 @@
 </html>
 <script src="scripts/banner.js"></script>
 <script>
+
+    ScrollReveal().reveal('.intro', { delay: 250, easing: 'ease-in-out' });
+    ScrollReveal().reveal('.personagens', { delay: 250, easing: 'ease-in-out' });
+    ScrollReveal().reveal('.valores', { delay: 250, easing: 'ease-in-out' });
+    ScrollReveal().reveal('.palavraCruzada', { delay: 250, easing: 'ease-in-out' });
+    ScrollReveal().reveal('.contact', { delay: 250, easing: 'ease-in-out' });
+
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+
     function enviar() {
 
         var ctNome = iptNome.value;
@@ -288,11 +310,4 @@
             alertContact();
         }
     }
-
-    ScrollReveal().reveal('.intro', {delay: 250, easing: 'ease-in-out'});
-    ScrollReveal().reveal('.personagens', {delay: 250, easing: 'ease-in-out'});
-    ScrollReveal().reveal('.valores', {delay: 250, easing: 'ease-in-out'});
-    ScrollReveal().reveal('.palavraCruzada', {delay: 250, easing: 'ease-in-out'});
-    ScrollReveal().reveal('.contact', {delay: 250, easing: 'ease-in-out'});
-
 </script>
