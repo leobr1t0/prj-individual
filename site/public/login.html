@@ -184,7 +184,11 @@
                 finalizarAguardar();
             } else {
 
-                console.log("Houve um erro ao tentar realizar o login!");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Houve um erro ao realizar o login',
+                });
 
                 resposta.text().then(texto => {
                     console.error(texto);
